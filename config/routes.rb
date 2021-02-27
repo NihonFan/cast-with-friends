@@ -1,15 +1,4 @@
 Rails.application.routes.draw do
-  get 'bookmarks/new'
-  get 'bookmarks/create'
-  get 'participations/new'
-  get 'participations/create'
-  get 'events/index'
-  get 'events/show'
-  get 'events/new'
-  get 'events/create'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/update'
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [:show, :edit, :update]

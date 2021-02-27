@@ -8,6 +8,10 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
 
+  has_many :events
+  has_many :participations
+  has_many :bookmarks, :dependent => :delete_all
+
   def login
     @login || self.username || self.email
   end

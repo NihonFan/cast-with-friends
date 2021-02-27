@@ -16,15 +16,6 @@
       <li class="nav-item">
         <%= link_to "Login", "#", class: "nav-link" %>
       </li>
-      <% if current_user %>
-        <% if current_user.photo.attached? %>
-          <%= image_tag cloudinary_url(current_user.photo.key), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>
-          <%= image_tag "https://cdn2.vectorstock.com/i/thumb-large/23/81/default-avatar-profile-icon-vector-18942381.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
-      <% else %>
-        <%= image_tag "https://cdn2.vectorstock.com/i/thumb-large/23/81/default-avatar-profile-icon-vector-18942381.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% end %>
     </ul>
   </div>
 </div>

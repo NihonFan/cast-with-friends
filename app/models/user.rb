@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :bookmarks, :dependent => :delete_all
 
   has_one_attached :avatar do |attachable|
-    attachable.variant :thumb, resize: "100x100"
+    attachable.variant :thumb, resize: "50x50"
   end
 
   def login

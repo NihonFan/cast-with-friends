@@ -1,15 +1,7 @@
-class UserPolicy < ApplicationPolicy
+class PodcastPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
-    end
-  end
-
-  def show?
-    if @user == record
-      true
-    else
-      false
     end
   end
 
@@ -20,5 +12,4 @@ class UserPolicy < ApplicationPolicy
       false
     end
   end
-
 end

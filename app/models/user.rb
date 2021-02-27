@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :participations
   has_many :bookmarks, :dependent => :delete_all
 
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize: "100x100"
+  end
+
   def login
     @login || self.username || self.email
   end

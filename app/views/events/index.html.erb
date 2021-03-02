@@ -4,15 +4,23 @@
     <div class="row col-xs-12">
       <% @events.each do |event| %>
       <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <%= event.title %>
-        <%= event.description %>
-        <%= event.date %>
-        <p>Participants: </p>
+        <br><%= event.title %>
+        <br><%= event.description %>
+        <br><%= event.date %>
+        <br><p>Participants: </p>
         <% event.participations.each do |participation| %>
           <p> <%= participation.user.username  %> </p>
         <% end %>
       </div>
       <% end %>
     </div>
+  </div>
+</div>
+
+<div class="card-product">
+  <img src="https://res.cloudinary.com/dsgl1xjqn/image/upload/v1614683688/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-02-27_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12.41.18_wusson.png" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
   </div>
 </div>

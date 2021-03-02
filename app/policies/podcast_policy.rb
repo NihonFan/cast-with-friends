@@ -5,6 +5,10 @@ class PodcastPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   def search?
     if @user == record
       true

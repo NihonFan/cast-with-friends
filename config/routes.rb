@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [:show, :edit, :update] do
-    get "/podcasts/search", to: "podcasts#search", as: "podcasts_search"
 
-    resources :podcasts, only: [:index, :show]
   end
 
-  resources :events, only: [:index, :new, :create, :show] do
+  get "/podcasts/search", to: "podcasts#search", as: "podcasts_search"
+  resources :podcasts, only: [:index, :show]
+
+  resources :episodes, only: [:show] do
+    resources :events, only: [:new, :create]
+  end
+
+  resources :events, only: [:index, :show] do
     resources :participations, only: [:new, :create]
     resources :bookmarks, only: [:new, :create]
   end

@@ -6,11 +6,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
-    if @user != record.event.user
-      true
-    else
-      false
-    end
+    true
   end
 
   def new?

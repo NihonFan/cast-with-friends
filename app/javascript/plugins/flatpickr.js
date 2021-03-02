@@ -1,7 +1,7 @@
 import flatpickr from 'flatpickr';
 
-flatpickr(".datepicker", {
+flatpickr("#event_date", {
   altInput: true,
   enableTime: true,
-  // dateFormat: "Y-m-d H:i",
+  dateFormat: "Y-m-d H:i",
 });

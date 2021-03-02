@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     #     end
     #   end
     # else
-    @booking.save
+    @event.save
     # end
 
     redirect_to user_path(@event.user)
@@ -41,6 +41,6 @@ class EventsController < ApplicationController
   private
 
   def booking_params
-    params.require(:event).permit(:date)
+    params.require(:event).permit(:date, :title, :description)
   end
 end

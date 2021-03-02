@@ -10,3 +10,8 @@
 <% @user.participations.each do |participation|  %>
   <%= participation.event.title %>
 <% end %>
+
+<%= link_to "Create a new event!", user_podcasts_search_path(@user), class: "nav-link btn" %>
+
+
+

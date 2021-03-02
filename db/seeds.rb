@@ -8,8 +8,6 @@
 
 require "open-uri"
 
-puts "Seeding..."
-
 Bookmark.destroy_all
 
 Participation.destroy_all
@@ -21,6 +19,9 @@ Event.destroy_all
 
 User.destroy_all
 
+puts "Seeding..."
+
+
 ryan = User.new(username: "Ryan", email: "ryan@hello.org", password: "111111")
 ryan.save
 ade = User.new(username: "Ade", email: "ade@hello.org", password: "111111")
@@ -30,18 +31,33 @@ lena.save
 kristina = User.new(username: "Kristina", email: "kristina@hello.org", password: "111111")
 kristina.save
 
+podcast = Podcast.find_or_initialize_by(LN_podcast_id: 999999999)
+podcast.LN_title = "Test Podcast"
+podcast.LN_image_URL = "test.com"
+podcast.LN_description = "test description"
+podcast.save
+
+episode = Episode.find_or_initialize_by(LN_episode_id: 999999999)
+episode.LN_audio_URL = "audio.com"
+episode.LN_title = "Test Episode"
+episode.LN_description = "test episode description"
+episode.podcast = podcast
+episode.save
 
 event_one = Event.new(title: "Top Comedy Podcast 'The Top' - Hosted by Ryan", description: "Please join in and have a great discussion with me! This is the first episode of 'The Top'", date: "2020/03/27" )
 event_one.user = ryan
+event_one.episode = episode
 event_one.save
 
 event_two = Event.new(title: "The Best Horror Discussion 'It Moves' by Ade", description: "I love horror podcasts and you will too, this is episode 32 of 'It Moves'", date: "2020/03/28" )
 event_two.user = ade
+event_two.episode = episode
 event_two.save
 
 
 event_three = Event.new(title: "Action podcast 'Hella Tough'", description: "This episode, ep. 42, of 'Hella Tough' is the best imo...let's chat while we listen", date: "2020/03/23" )
 event_three.user = lena
+event_three.episode = episode
 event_three.save
 
 

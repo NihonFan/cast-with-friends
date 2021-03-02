@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    # Episode.find(params[:episode_id])
   end
 
   def new

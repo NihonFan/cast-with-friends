@@ -5,6 +5,14 @@ class EventPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    if @user != record.event.user
+      true
+    else
+      false
+    end
+  end
+
   def new?
     user.present?
   end

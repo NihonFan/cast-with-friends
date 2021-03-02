@@ -30,16 +30,16 @@ development:
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
   #username: cast_with_friends
-  username: postgres
+  # username: postgres
 
-  # The password associated with the postgres role (username).
-  password: Ryanh856
-
-
-  host: localhost
+  # # The password associated with the postgres role (username).
+  # password: Ryanh856
 
 
-  port: 5432
+  # host: localhost
+
+
+  # port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public

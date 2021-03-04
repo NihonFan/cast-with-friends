@@ -1,3 +1,29 @@
+.container-index{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px 1fr 1fr 100px;
+}
+
+.sticky-note{
+  width: 250px;
+  height: 400px;
+  margin-left: 50px;
+  padding: 30px;
+  background: $light-green;
+  text-align: justify-center;
+}
+
+
+.booking{
+  width: 150px;
+  height: 30px;
+  display: flex;
+  background: yellow;
+  border-radius: 5px;
+  text-align: justify-center;
+}
+
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -13,21 +39,6 @@
   object-fit: cover;
 }
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
 .card-product .card-product-infos {
   padding: 16px;
 }
-

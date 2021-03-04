@@ -4,7 +4,7 @@
     <div class="row col-xs-12">
       <% @events.each do |event| %>
       <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <%= event.title %>
+        <%= link_to event.title, event_participations_path(event), method: :post %>
         <%= event.description %>
         <%= event.date %>
         <p>Participants: </p>

@@ -4,7 +4,7 @@
 <p>Podcast Title: <%= @podcast.LN_title %> </p>
 
 <% @episodes.each do |episode| %>
-  <p> <%= episode.LN_title %> </p>
+  <p> <%= link_to episode.LN_title, new_episode_event_path(episode) %> </p>
   <p> <%= episode.LN_description %> </p>
   <p> <%= episode.LN_audio_URL %> </p>
 

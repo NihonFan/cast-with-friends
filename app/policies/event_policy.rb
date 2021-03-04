@@ -5,6 +5,10 @@ class EventPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+     @record.participants.include?(@user) || @record.user == @user
+  end
+
   def create?
     true
   end

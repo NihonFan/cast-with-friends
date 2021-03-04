@@ -4,7 +4,12 @@ class EventsController < ApplicationController
   end
 
   def show
-    # Episode.find(params[:episode_id])
+    @event = Event.find(params[:id])
+    authorize @event
+
+    # res = URI.open('https://www.listennotes.com/e/p/12171ce5c942402b87bea10ee18aff1c/')
+    # res['location']
+
   end
 
   def new

@@ -1,10 +1,25 @@
 .container-show{
   display: flex;
-  float: left;
   flex-direction: column;
-  justify-content: space-between;
-  width: 250px;
-  height: 400px;
-  background: $light-blue;
+  width: 400px;
+  height: auto;
+  margin: 20px 20px;
+  padding: 30px 30px;
+  background: $main-green;
   text-align: center;
+  border-radius: 10px;
+}
+
+
+.link{
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  color: black;
+  background: yellow;
+  border-radius: 5px;
+}
+
+.link:hover{
+  background: #F5DA2A;
 }

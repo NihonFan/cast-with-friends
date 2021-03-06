@@ -3,12 +3,12 @@
 
 <p> Created Events: </p>
 <% @user.events.each do |event|  %>
-  <%= event.title  %>
+  <%= link_to event.title, event_path(event)  %>
 <% end %>
 
 <p> Events where I am Participating: </p>
 <% @user.participations.each do |participation|  %>
-  <%= participation.event.title %>
+  <%= link_to participation.event.title, event_path(participation.event) %>
 <% end %>
 
 <%= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>

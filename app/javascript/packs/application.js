@@ -1,5 +1,7 @@
 import "../plugins/flatpickr";
 import { play_audio } from "../plugins/howler";
+import { pause_audio } from "../plugins/howler";
+import { load_audio } from "../plugins/howler";
 
 
 // This file is automatically compiled by Webpack, along with any other files
@@ -35,6 +37,8 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  load_audio();
   play_audio();
+  pause_audio();
 });
 

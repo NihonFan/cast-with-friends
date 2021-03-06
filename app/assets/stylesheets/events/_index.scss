@@ -1,0 +1,62 @@
+
+
+.container-index{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+
+.sticky-note{
+  display: flex;
+  float: left;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 400px;
+  background: $light-blue;
+  text-align: center;
+}
+
+
+.booking{
+  width: 150px;
+  height: 30px;
+  background: yellow;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+
+.pocast-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  float: right;
+  width: 400px;
+  height: auto;
+  margin: 20px;
+  padding: 10px;
+  background: $bright-blue;
+  text-align: center;
+}
+
+
+.card-product {
+  padding: 20px;
+  margin: 20px;
+  width: 400px;
+  height: auto;
+  background: white;
+  display: grid;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}

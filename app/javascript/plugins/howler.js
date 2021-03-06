@@ -1,6 +1,5 @@
 import {Howl, Howler} from 'howler';
 
-
 const load_audio = () => {
   window.howler_audio = new Howl({
   src: [ document.getElementById('audio-file').innerText ],
@@ -17,7 +16,6 @@ const play_audio = () => {
   audio_button.addEventListener('click', (event) => {
     window.howler_audio.play();
   });
-
 }
 
 const pause_audio = () => {
@@ -26,10 +24,8 @@ const pause_audio = () => {
   pause_button.addEventListener('click', (event) => {
     window.howler_audio.pause();
   });
-
 }
 
 export { play_audio }
 export { pause_audio }
 export { load_audio }
-

@@ -42,3 +42,6 @@ document.addEventListener('turbolinks:load', () => {
   pause_audio();
 });
 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

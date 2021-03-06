@@ -17,4 +17,12 @@ class EventPolicy < ApplicationPolicy
     user.present?
   end
 
+  def plays?
+    true
+  end
+
+  def pauses?
+    true
+  end
+
 end

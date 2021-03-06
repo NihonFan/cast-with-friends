@@ -1,8 +1,17 @@
-<h1>Events#show</h1>
-<h1> Event: <%= @event.title %>  </h1>
-<h1> <%= @event.description %>  </h1>
-<h1> Podcast: <%= @event.episode.podcast.LN_title %>  </h1>
-<h1> Episode: <%= @event.episode.LN_title %>  </h1>
-<a> <%= @event.episode.LN_audio_URL %>  </a>
+<div class="container-show">
+  <div class="container">
+    <h2>The podcast you are going to listen 🎧</h2>
+    <br>
+    <h5>
+      <strong>Event:<%= @event.title %></strong>
+    </h5>
+    <p><%= @event.description %></p>
+    <br>
+    <p>Podcast: <%= @event.episode.podcast.LN_title %><br>
+    Episode: <%= @event.episode.LN_title %></p>
 
-
+    <div class="link">
+      <a><%= @event.episode.LN_audio_URL %></a>
+    </div>
+  </div>
+</div>

@@ -1,17 +1,24 @@
-<h1> <%= @user.username  %> </h1>
-<p> <%= @user.email  %> </p>
+<div class="container-show">
+  <div class="container">
+    <h1><strong>Hello, <%= @user.username %></strong>😀</h1>
+    <p> <%= @user.email %> </p>
+    <br>
+    <p> Created Events: </p>
+    <div class="list">
+      <% @user.events.each do |event| %>
+        <%= link_to event.title, event_path(event) %>
+      <% end %>
+    </div>
 
-<p> Created Events: </p>
-<% @user.events.each do |event|  %>
-  <%= link_to event.title, event_path(event)  %>
-<% end %>
-
-<p> Events where I am Participating: </p>
-<% @user.participations.each do |participation|  %>
-  <%= link_to participation.event.title, event_path(participation.event) %>
-<% end %>
-
-<%= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
-
-
-
+    <br>
+    <div class="list">
+      <p> Events where I am Participating: </p>
+      <% @user.participations.each do |participation|  %>
+      <ul>
+      <%= link_to participation.event.title, event_path(participation.event) %>
+      </ul>
+      <% end %>
+    </div>
+    <%= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
+  </div>
+</div>

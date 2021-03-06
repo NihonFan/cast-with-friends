@@ -3,6 +3,8 @@
 <h1> <%= @event.description %>  </h1>
 <h1> Podcast: <%= @event.episode.podcast.LN_title %>  </h1>
 <h1> Episode: <%= @event.episode.LN_title %>  </h1>
-<a> <%= @event.episode.LN_audio_URL %>  </a>
+<a id="audio-file"> <%= @event.episode.LN_audio_URL %>  </a>
 
+<button id="audio-button" type="button" class="btn btn-primary">Play Audio</button>
+<button id="audio-pause" type="button" class="btn btn-primary">Pause Audio</button>
 

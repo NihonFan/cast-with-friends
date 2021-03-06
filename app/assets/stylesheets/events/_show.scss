@@ -1,0 +1,10 @@
+.container-show{
+  display: flex;
+  float: left;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 400px;
+  background: $light-blue;
+  text-align: center;
+}

@@ -10,11 +10,16 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
+      <% if current_user.present?  %>
+        <li><%= render 'shared/searchbar' %></li>
+      <% end %>
       <% if current_user.present? %>
         <li class="nav-item active">
-          <button type="button" class="btn"><%= link_to "See all Events", events_path, class: "nav-link nbtn" %></button>
+          <%= link_to "See all Events", events_path, class: "nav-link nbtn" %>
         </li>
       <% end %>
+
       <% if current_user %>
         <li class="nav-item active">
           <%= link_to "Dashboard", user_path(current_user), class: "nav-link nbtn" %>

@@ -1,8 +1,10 @@
-<h1>Podcasts#search</h1>
-<p>Find me in app/views/podcasts/search.html.erb</p>
+<div class="container">
+  <h1 style="text-align:center">Search for a podcast title</h1>
 
-
-<%= simple_form_for :title, url: podcasts_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input :item, input_html: {value: ""}, label: false %>
-  <%= f.submit "Search", class: "btn" %>
-<% end %>
+  <div class="box">
+    <%= simple_form_for :title, url: podcasts_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :item, input_html: {value: ""}, label: false %>
+      <%= f.submit "Search", class: "btn" %>
+    <% end %>
+  </div>
+</div>

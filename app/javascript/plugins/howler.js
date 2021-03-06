@@ -12,19 +12,28 @@ const load_audio = () => {
 
 const play_audio = () => {
 
+  const id = document.getElementById('event').dataset.eventId;
+
   const audio_button = document.getElementById('audio-button');
 
   audio_button.addEventListener('click', (event) => {
-    window.howler_audio.play();
+    fetch(`/events/${id}/plays`, {
+          method: "POST"
+        });
   });
 
 }
 
 const pause_audio = () => {
+
+  const id = document.getElementById('event').dataset.eventId;
+
   const pause_button = document.getElementById('audio-pause');
 
   pause_button.addEventListener('click', (event) => {
-    window.howler_audio.pause();
+    fetch(`/events/${id}/pauses`, {
+          method: "POST"
+        });
   });
 
 }

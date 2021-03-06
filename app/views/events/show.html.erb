@@ -10,17 +10,17 @@
     <p>Podcast: <%= @event.episode.podcast.LN_title %><br>
       Episode: <%= @event.episode.LN_title %></p>
 
-<h1>If you are interested in <%= @event.title %>, join it and meet friends</h1>
-<div class="container-show">
+<div id="event" class="container-show" data-event-id="<%= @event.id %>">
   <h1> Event: <%= @event.title %>  </h1>
   <h1> <%= @event.description %>  </h1>
   <h1> Podcast: <%= @event.episode.podcast.LN_title %>  </h1>
   <h1> Episode: <%= @event.episode.LN_title %>  </h1>
   <a id="audio-file"> <%= @event.episode.LN_audio_URL %>  </a>
+  <button id="audio-button" type="button" class="btn btn-primary">Play Audio</button>
+  <button id="audio-pause" type="button" class="btn btn-primary">Pause Audio</button>
 </div>
 
-<button id="audio-button" type="button" class="btn btn-primary">Play Audio</button>
-<button id="audio-pause" type="button" class="btn btn-primary">Pause Audio</button>
+
 
 
     <div class="link">

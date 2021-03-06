@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def index
     @events = policy_scope(Event)
   end
@@ -30,6 +33,28 @@ class EventsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def plays
+    @event = Event.find(params[:id])
+    authorize @event
+
+    EventChannel.broadcast_to(
+      @event,
+      "play"
+    )
+  end
+
+  def pauses
+
+    @event = Event.find(params[:id])
+    authorize @event
+
+    EventChannel.broadcast_to(
+      @event,
+      "pause"
+    )
+
   end
 
   private

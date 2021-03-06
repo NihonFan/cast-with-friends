@@ -1,8 +1,6 @@
 require 'json'
 require 'open-uri'
 
-# require 'final_redirect_url'
-
 class PodcastsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index
   skip_after_action :verify_authorized, only: [:search, :show]

@@ -1,0 +1,24 @@
+.container-new{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: auto;
+  background-color: $light-orange;
+  border: 1px solid $light-orange;
+  border-radius: 10px;
+  margin: 30px 20px;
+  padding: 30px 30px;
+}
+
+
+.podcast-name{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.btn-a {
+  width: 70px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $main-orange;
+}

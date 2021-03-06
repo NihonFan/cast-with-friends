@@ -91,7 +91,6 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.14.2)
-    final_redirect_url (0.1.0)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -120,7 +119,6 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    open_uri_redirections (0.2.1)
     orm_adapter (0.5.0)
     pg (1.2.3)
     pry (0.13.1)
@@ -244,11 +242,9 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   dotenv-rails
-  final_redirect_url
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
-  open_uri_redirections
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails

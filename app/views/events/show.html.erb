@@ -1,3 +1,16 @@
+<div class="container">
+  <div class="container-show">
+    <h1> Welcome to: <%= @event.title %>  </h1>
+    <h2> <%= @event.description %>  </h2>
+    <h3>Hosted by <%= @event.user.username %></h3>
+    <h4> Podcast title: <%= @event.episode.podcast.LN_title %>  </h4>
+    <h4> Episode: <%= @event.episode.LN_title %>  </h4>
+    <a id="audio-file"> <% @event.episode.LN_audio_URL %>  </a>
+  </div>
+
+  <button id="audio-button" type="button" class="btn btn-primary">Play Audio</button>
+  <button id="audio-pause" type="button" class="btn btn-primary">Pause Audio</button>
+
 <div class="container-show">
   <div class="container">
     <h2>The podcast you are going to listen 🎧</h2>

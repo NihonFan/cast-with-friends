@@ -1,6 +1,5 @@
 import {Howl, Howler} from 'howler';
 
-
 const load_audio = () => {
   window.howler_audio = new Howl({
   src: [ document.getElementById('audio-file').innerText ],
@@ -21,7 +20,6 @@ const play_audio = () => {
           method: "POST"
         });
   });
-
 }
 
 const pause_audio = () => {
@@ -35,10 +33,8 @@ const pause_audio = () => {
           method: "POST"
         });
   });
-
 }
 
 export { play_audio }
 export { pause_audio }
 export { load_audio }
-

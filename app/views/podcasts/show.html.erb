@@ -1,14 +1,8 @@
-<h1>Podcasts#show</h1>
-<p>Find me in app/views/podcasts/show.html.erb</p>
-
-<p>Podcast Title: <%= @podcast.LN_title %> </p>
-
-<% @episodes.each do |episode| %>
-  <p> <%= link_to episode.LN_title, new_episode_event_path(episode) %> </p>
-  <p> <%= episode.LN_description %> </p>
-  <p> <%= episode.LN_audio_URL %> </p>
-
-  <!-- link_to "pick this episode", new_episode_event_path(ep_id) -->
-<% end %>
-
-
+<div id="show">
+  <% @episodes.each do |episode| %>
+    <%= link_to new_episode_event_path(episode), target: "_top" do %>
+      <p><%= episode.LN_title %></p>
+      <p><%= episode.LN_description %></p>
+    <% end %>
+  <% end %>
+</div>

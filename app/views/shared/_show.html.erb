@@ -1,0 +1,8 @@
+<div id="show">
+  <% @episodes.each do |episode| %>
+    <%= link_to new_episode_event_path(episode), target: "_top" do %>
+      <p><%= episode.LN_title %></p>
+      <p><%= episode.LN_description %></p>
+    <% end %>
+  <% end %>
+</div>

@@ -1,31 +1,28 @@
+<div class="container-user">
+  <h1><strong>Hello, <%= @user.username %></strong>😀</h1>
+  <p><%= @user.email %></p>
 
-  <div class="container-user">
-    <div class="h">
-      <h1><strong>Hello, <%= @user.username %></strong>😀</h1>
-    </div>
-    <div class="text">
-      <p> <%= @user.email %> </p>
+  <ul><p>Events+</p></ul>
+  <ul><p>History</p></ul>
 
-  <div class="container">
-    <p> Created Events: </p>
-    <div class="list">
-      <% @user.events.each do |event| %>
-        <%= link_to event.title, event_path(event) %>
-      <% end %>
-      </div>
-  </div>
-  <div class="container">
-    <div class="list">
-      <p> Events where I am Participating: </p>
-      <% @user.participations.each do |participation|  %>
-      <ul>
-      <%= link_to participation.event.title, event_path(participation.event) %>
-      </ul>
-      <% end %>
-    </div>
-    <%= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
-    </div>
-  </div>
+
+
+  <section class="saved">
+    <h3>My Saved Events</h3>
+    <% @user.events.each do |event| %>
+      <%= link_to event.title, event_path(event) %>
+    <% end %>
+  </section>
+
+  <h3>Events where I am Participating:</h3>
+  <section class="pod-cards">
+    <% @user.participations.each do |participation|  %>
+    <%= link_to participation.event.title, event_path(participation.event) %>
+    <% end %>
+  </section>
+
+  <%= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
 </div>
+
 
 

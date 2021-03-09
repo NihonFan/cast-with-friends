@@ -9,7 +9,7 @@
 
 .container .box {
   width: 100%;
-  margin: 20px;
+  margin: auto;
   display: table;
 }
 
@@ -28,6 +28,22 @@
 }
 
 .container .box .box-cell.box2 {
-
 }
 
+.box {
+  background: linear-gradient(-45deg, #A5D6A7, #0097A7, #4DB6AC, #4B88EB);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

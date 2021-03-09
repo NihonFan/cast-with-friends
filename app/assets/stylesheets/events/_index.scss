@@ -1,20 +1,23 @@
-.container-index{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
+// .container-index{
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-content: center;
+// }
+body {
+  background-color: pink;
 }
-
 
 .sticky-note{
   position: sticky;
+  top: 5%;
   display: flex;
   float: left;
   flex-direction: column;
   justify-content: space-between;
   width: 250px;
   height: 400px;
-  background: $light-blue;
+  background: $main-orange;
   text-align: center;
 }
 

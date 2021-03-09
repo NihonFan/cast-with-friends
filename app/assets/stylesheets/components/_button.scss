@@ -1,0 +1,10 @@
+.btn {
+  color: $white;
+  background-color: $main-orange;
+  border-color: none;
+  &:hover {
+    color: $main-orange;
+    background-color: $white;
+    border-color: $main-orange;
+  }
+}

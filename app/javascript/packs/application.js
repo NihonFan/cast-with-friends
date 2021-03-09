@@ -2,6 +2,7 @@ import "../plugins/flatpickr";
 import { play_audio } from "../plugins/howler";
 import { pause_audio } from "../plugins/howler";
 import { load_audio } from "../plugins/howler";
+import { initEventCable } from "../channels/event_channel";
 
 
 // This file is automatically compiled by Webpack, along with any other files
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   load_audio();
   play_audio();
   pause_audio();
+  initEventCable();
 });
 
 $('#myModal').on('shown.bs.modal', function () {

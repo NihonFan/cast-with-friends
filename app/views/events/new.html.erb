@@ -1,17 +1,18 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
-<div class="container">
-  <h1>Create your event</h1>
-
-  <p>Podcast: <%= @episode.podcast.LN_title %></p>
-  <p>Podcast episode: <%= @episode.LN_title %></p>
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-      <%= simple_form_for [ @episode, @event ] do |f| %>
-        <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
-        <%= f.input :title, class: "form-control" %>
-        <%= f.input :description, class: "form-control" %>
-        <%= f.button :submit, "Create", class: "btn" %>
-      <% end %>
+<div class="container-new">
+  <div class="justify-content-center">
+    <h1>Create <strong>your event</strong> and invite your friends!</h1>
+      <div class="podcast-name">
+        <p>⭐️Podcast: <%= @episode.podcast.LN_title %></p>
+        <p>⭐️Episode: <%= @episode.LN_title %></p>
+      </div>
+     <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <%= simple_form_for [ @episode, @event ] do |f| %>
+          <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
+          <%= f.input :title, class: "form-control" %>
+          <%= f.input :description, class: "form-control" %>
+          <%= f.button :submit, "Create", class: "btn-a" %>
+        <% end %>
+     </div>
   </div>
 </div>
 

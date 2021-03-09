@@ -44,3 +44,6 @@ document.addEventListener('turbolinks:load', () => {
   initEventCable();
 });
 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

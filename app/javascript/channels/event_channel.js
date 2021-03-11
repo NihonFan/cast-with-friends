@@ -11,8 +11,8 @@ const initEventCable = () => {
         .then((response) => response.json())
         .then((data) => {
           if (data.state === "playing") {
-            window.howler_audio.seek(data.elapsed_seconds);
-            window.howler_audio.play();
+            window.howler_audio.seek(data.elapsed_seconds).play();
+            // window.howler_audio.play();
           } else if (data.state === "paused") {
             window.howler_audio.pause();
           }

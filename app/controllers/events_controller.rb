@@ -44,22 +44,16 @@ class EventsController < ApplicationController
       @event.started_at = Time.now
     end
 
-    if @event.paused_seconds
-      @event.paused_seconds = Time.now - @event.paused_at
-    else
-      @event.paused_seconds = 0
-    end
-
-    @event.save
+    @event.paused_seconds += Time.now - @event.paused_at
 
     @event.state = "playing"
     # Time.now - @event.time_paused
 
-    @event.save
+    @event.save!
 
     EventChannel.broadcast_to(
       @event,
-      "play"
+      "playing"
     )
   end
 
@@ -68,13 +62,14 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
     @event.state = "paused"
+
     @event.paused_at = Time.now
 
-    @event.save
+    @event.save!
 
     EventChannel.broadcast_to(
       @event,
-      "pause"
+      "paused"
     )
 
   end

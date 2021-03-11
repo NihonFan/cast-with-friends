@@ -9,5 +9,12 @@ class Event < ApplicationRecord
   validates :description, presence: true
   validates :date, presence: true
 
+  def elapsed_seconds
+    if self.state != "unplayed"
+      (Time.now - started_at) - (paused_seconds || 0)
+    else
+      0
+    end
+  end
 
 end

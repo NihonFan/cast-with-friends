@@ -1,7 +1,6 @@
 <h1>Events</h1>
 
 <div class="container">
-<div class="container-index">
     <div class="sticky-note">
       <p>If you bookmark an event, you'll be receive notifications about the event</p>
       <!-- <div class="booking">
@@ -9,22 +8,23 @@
       </div> -->
       <p>Add as many events as you want, and discuss with various people!</p>
     </div>
-      <div class="pocast-list">
         <div class="row col-xs-12">
+      <div class="pocast-list">
           <% @events.each do |event| %>
            <div class="card-product">
-              <%= link_to event.title, event_participations_path(event), method: :post %>
-              <%= event.title %>
-              <%= event.description %>
-              <%= event.date %>
-              <p>Participants:
-                <% event.participations.each do |participation| %>
-                  <%= participation.user.username %> </p>
-                <% end %>
-            </div>
+             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+             <div class="card-product-infos">
+               <h2><%= link_to event.title, event_participations_path(event), method: :post %></h2>
+               <p><%= event.description %></p>
+               <p><%= event.date %></p>
+               <p>Participants:
+                 <% event.participations.each do |participation| %>
+                   <%= participation.user.username %>
+                 <% end %>
+               </p>
+             </div>
+           </div>
         <% end %>
        </div>
     </div>
  </div>
-</div>
-

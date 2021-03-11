@@ -2,19 +2,37 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7861bcfa7fd3e737ef8335f9ca8d2430be788b42
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+<<<<<<< HEAD
 @import "flatpickr/dist/flatpickr";
 // Your CSS partials
 @import "components/index";
 @import "components/audio";
+=======
+
+@import "flatpickr/dist/flatpickr";
+
+// Your CSS partials
+@import "components/index";
+@import "components/audio";
+
+>>>>>>> 7861bcfa7fd3e737ef8335f9ca8d2430be788b42
 @import "pages/index";
 @import "events/index";
 @import "events/show";
 @import "events/new";
 @import "users/show";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7861bcfa7fd3e737ef8335f9ca8d2430be788b42
 body {
   min-height: 75vh;
 }

@@ -43,13 +43,16 @@ class EventsController < ApplicationController
     if @event.started_at == nil
       @event.started_at = Time.now
     end
-
-    @event.paused_seconds += Time.now - @event.paused_at
+    if @event.paused_seconds != nil
+      @event.paused_seconds += Time.now - @event.paused_at
+    else
+      @event.paused_seconds = 0
+    end
 
     @event.state = "playing"
     # Time.now - @event.time_paused
 
-    @event.save!
+    @event.save
 
     EventChannel.broadcast_to(
       @event,
@@ -65,7 +68,7 @@ class EventsController < ApplicationController
 
     @event.paused_at = Time.now
 
-    @event.save!
+    @event.save
 
     EventChannel.broadcast_to(
       @event,

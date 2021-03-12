@@ -11,9 +11,10 @@ const initEventCable = () => {
         .then((response) => response.json())
         .then((data) => {
           if (data.state === "playing") {
-            var id = window.howler_audio.play();
-            window.howler_audio.seek(data.elapsed_seconds).play(id);
-
+            window.howler_audio.pause();
+            window.howler_audio.seek(data.elapsed_seconds);
+            // .then(() => {
+            window.howler_audio.play(window.howler_audio.id);
             // window.howler_audio.seek(data.elapsed_seconds).play(howler_audio._sounds._id);
             // window.howler_audio.play();
           } else if (data.state === "paused") {

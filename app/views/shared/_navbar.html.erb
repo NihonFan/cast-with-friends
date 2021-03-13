@@ -11,23 +11,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
+      <nav>
+        <%= link_to "Events", events_path %>
+        <%= link_to "Dashboard", user_path(current_user)%>
+        <div id="indicator"></div>
+      </nav>
       <% if current_user.present?  %>
-        <li><%= render 'shared/searchbar' %></li>
+        <li id="mag"><%= render 'shared/searchbar' %></li>
       <% end %>
-      <% if current_user.present? %>
-        <li class="nav-item active">
-          <%= button_to "See all Events", events_path, method: :get, class: "btn" %>
-        </li>
-      <% end %>
-
-      <% if current_user %>
-        <li class="nav-item active">
-          <%= button_to "Dashboard", user_path(current_user), method: :get, class: "btn" %>
-        </li>
-      <% end %>
-      <!-- <li class="nav-item active">
-        <%#= button_to "Home", root_path, class: "btn" %>
-      </li> -->
       <% if current_user.present?  %>
         <li class="nav-item active">
           <%= button_to "Log out", destroy_user_session_path, :method => :delete, class: "btn" %>
@@ -40,3 +31,18 @@
     </ul>
   </div>
 </div>
+
+      <%# if current_user.present? %>
+       <!--  <li class="nav-item active">
+          <%#= button_to "See all Events", events_path, method: :get, class: "btn" %>
+        </li> -->
+      <%# end %>
+
+      <%# if current_user %>
+        <!-- <li class="nav-item active">
+          <%#= button_to "Dashboard", user_path(current_user), method: :get, class: "btn" %>
+        </li> -->
+      <%# end %>
+      <!-- <li class="nav-item active">
+        <%#= button_to "Home", root_path, class: "btn" %>
+      </li> -->

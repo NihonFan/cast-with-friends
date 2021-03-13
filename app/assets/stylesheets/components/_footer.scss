@@ -1,7 +1,8 @@
 .footer {
   padding:40px 0;
-  background-color:#223D63;
-  color:white;
+  background-color:$strong-blue;
+  color:$lightest;
+  border-top: 1px $soft-blue solid;
   // position:sticky;
   // bottom: 0;
 }
@@ -42,7 +43,7 @@
   display:inline-block;
   text-align:center;
   border-radius:50%;
-  border:1px solid #F4F4F4;
+  border:1px solid $lightest;
   margin:0 8px;
   color:inherit;
   opacity:0.75;
@@ -56,6 +57,6 @@
   margin-top:15px;
   text-align:center;
   font-size:13px;
-  color:#F4F4F4;
+  color:$lightest;
   margin-bottom:0;
 }

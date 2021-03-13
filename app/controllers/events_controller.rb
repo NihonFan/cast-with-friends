@@ -1,3 +1,5 @@
+require_relative "./lib/dynamic_key"
+
 class EventsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
@@ -12,6 +14,22 @@ class EventsController < ApplicationController
 
     # res = URI.open('https://www.listennotes.com/e/p/12171ce5c942402b87bea10ee18aff1c/')
     # res['location']
+
+    expiration_time_in_seconds = 3600
+
+    current_time_stamps = Time.now.to_i
+
+    params = {
+      app_id: 'c8884b4e78204e869b61c7022282e104',
+      app_certificate: '6b7de680b0354e6986cf0fc7094cff6d',
+      channel_name: "#{@event.id}",
+      uid: 0,
+      role: AgoraDynamicKey::RTCTokenBuilder::Role::PUBLISHER,
+      privilege_expired_ts: current_time_stamps + expiration_time_in_seconds
+    }
+
+    result = AgoraDynamicKey::RTCTokenBuilder.build_token_with_uid params
+    @temp_token = result
 
   end
 

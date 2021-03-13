@@ -11,7 +11,7 @@
       Episode: <%= @event.episode.LN_title %></p>
 
     <div id="event" class="container-show" data-event-id="<%= @event.id %>">
-      <!-- <a id="audio-file"> <%= @event.episode.LN_audio_URL %>  </a> -->
+      <a id="audio-file"> <%= @event.episode.LN_audio_URL %>  </a>
       <div class="row">
         <div class="col">
           <button id="audio-button" type="button" class="btn">Play Audio</button>
@@ -24,5 +24,6 @@
     <div class="link">
       <a class="audioURL"><%= @event.episode.LN_audio_URL %></a>
     </div>
+    <div id="agora-temp-token"> <%= @temp_token %> </div>
   </div>
 </div>

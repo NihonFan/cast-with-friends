@@ -6,6 +6,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
+    "agora-rtc-sdk-ng": "^4.3.0",
     "bootstrap": "^4.6.0",
     "flatpickr": "^4.6.9",
     "howler": "^2.2.1",

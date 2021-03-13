@@ -13,6 +13,8 @@
 // Your CSS partials
 @import "components/index";
 @import "components/audio";
+@import "components/form";
+@import "components/link";
 
 @import "pages/index";
 @import "events/index";
@@ -20,6 +22,6 @@
 @import "events/new";
 @import "users/show";
 
-body {
+.container {
   min-height: 75vh;
 }

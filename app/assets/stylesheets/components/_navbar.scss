@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $pale-green;
   top:0;
   position:sticky;
 }
@@ -13,13 +13,24 @@
   width: 40px;
 }
 
-button .nav-link {
-  color: $white !important;
-  &:hover {
-    color: $red !important;
-  }
+.search {
+  border: 1px $dark-green solid;
 }
+
+.btn, .btn:hover {
+  border-radius: 5px;
+}
+// button .nav-link {
+//   color: $white !important;
+//   &:hover {
+//     color: $red !important;
+//   }
+// }
 
 li {
   padding: 0 1em;
+}
+
+img {
+  border-radius: 50px;
 }

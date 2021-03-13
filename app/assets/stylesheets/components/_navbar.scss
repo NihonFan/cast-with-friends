@@ -1,8 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: linear-gradient(-0deg, #23D6D9 15%, #1AACF0, #4B88EB 80%);
   top:0;
   position:sticky;
+  border-bottom: 2px $dark-green solid;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,9 +14,24 @@
   width: 40px;
 }
 
-button .nav-link {
-  color: $white !important;
-  &:hover {
-    color: $red !important;
-  }
+.search {
+  border: 1px $dark-green solid;
+}
+
+.btn, .btn:hover {
+  border-radius: 5px;
+}
+// button .nav-link {
+//   color: $white !important;
+//   &:hover {
+//     color: $red !important;
+//   }
+// }
+
+li {
+  padding: 0 1em;
+}
+
+img {
+  border-radius: 50px;
 }

@@ -38,6 +38,7 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // window.howler_audio.stop();
   load_audio();
   play_audio();
   pause_audio();

@@ -39,21 +39,61 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
 
-    EventChannel.broadcast_to(
-      @event,
-      "play"
-    )
+    if @event.state == "playing"
+
+      EventChannel.broadcast_to(
+        @event,
+        "play"
+      )
+
+    else
+
+
+      # @event.started_from = DateTime.current
+      if @event.started_at == nil
+        @event.started_at = Time.now
+      end
+      if @event.paused_seconds != nil
+        @event.paused_seconds += Time.now - @event.paused_at
+      else
+        @event.paused_seconds = 0
+      end
+
+      @event.state = "playing"
+      # Time.now - @event.time_paused
+
+      @event.save
+
+      EventChannel.broadcast_to(
+        @event,
+        "play"
+      )
+    end
+
   end
 
   def pauses
-
     @event = Event.find(params[:id])
     authorize @event
 
-    EventChannel.broadcast_to(
-      @event,
-      "pause"
-    )
+    if @event.state == "paused"
+      EventChannel.broadcast_to(
+        @event,
+        "pause"
+      )
+    else
+
+      @event.state = "paused"
+
+      @event.paused_at = Time.now
+
+      @event.save
+
+      EventChannel.broadcast_to(
+        @event,
+        "pause"
+      )
+    end
 
   end
 

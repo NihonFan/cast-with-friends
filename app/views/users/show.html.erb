@@ -8,7 +8,7 @@
 <div class="container-user">
   <div class="container">
     <div class="user">
-      <h1><strong>Hello, <%= @user.username %></strong>😀</h1>
+      <h3><strong>Hello, <%= @user.username %></strong>😀</h3>
       <p><%= @user.email %></p>
     </div>
 
@@ -19,9 +19,11 @@
 
     <section class="saved">
       <h3>My Saved Events</h3>
-      <% @user.events.each do |event| %>
-      <%= link_to event.title, event_path(event) %>
-      <% end %>
+      <div class="timeline">
+        <% @user.events.each do |event| %>
+        <%= link_to event.title, event_path(event) %>
+        <% end %>
+      </div>
     </section>
 
     <h3>Events where I am Participating:</h3>

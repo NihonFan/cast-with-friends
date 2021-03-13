@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag ("Logo_v1.png") %>
   <% end %>
 
@@ -16,25 +16,25 @@
       <% end %>
       <% if current_user.present? %>
         <li class="nav-item active">
-          <%= link_to "See all Events", events_path, class: "nav-link nbtn" %>
+          <%= button_to "See all Events", events_path, method: :get, class: "btn" %>
         </li>
       <% end %>
 
       <% if current_user %>
         <li class="nav-item active">
-          <%= link_to "Dashboard", user_path(current_user), class: "nav-link nbtn" %>
+          <%= button_to "Dashboard", user_path(current_user), method: :get, class: "btn" %>
         </li>
       <% end %>
-      <li class="nav-item active">
-        <%= link_to "Home", root_path, class: "nav-link" %>
-      </li>
+      <!-- <li class="nav-item active">
+        <%#= button_to "Home", root_path, class: "btn" %>
+      </li> -->
       <% if current_user.present?  %>
         <li class="nav-item active">
-          <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "nav-link nbtn" %>
+          <%= button_to "Log out", destroy_user_session_path, :method => :delete, class: "btn" %>
         </li>
       <% else %>
         <li class="nav-item active">
-          <%= link_to "Log in", new_user_session_path, class: "nav-link nbtn" %>
+          <%= button_to "Log in", new_user_session_path, class: "btn" %>
         </li>
       <% end %>
     </ul>

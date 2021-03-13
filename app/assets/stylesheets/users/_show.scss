@@ -43,8 +43,8 @@
 .timeline{
   margin: 10px;
   padding: 10px;
-  width: 700px;
-  height: 300px;
+  width: auto;
+  height: fit-content;
   color: black;
   background-color: $pale-blue;
   border: 1px solid $pale-blue;

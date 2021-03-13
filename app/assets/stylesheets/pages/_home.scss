@@ -19,16 +19,23 @@
 
 .container .box .box-cell {
   display: table-cell;
-  width: 50%;
+  width: auto;
   padding: 10px;
 }
 
 .container .box .box-cell.box1 {
+  vertical-align:top
 
 }
 
 .container .box .box-cell.box2 {
+  vertical-align:top
 }
+
+
+//body {
+//  background: linear-gradient(145deg, rgb(195, 240, 200), rgb(80, 155, 245));;
+//}
 
 .box {
   background: linear-gradient(-45deg, #A5D6A7, #0097A7, #4DB6AC, #4B88EB);
@@ -49,4 +56,16 @@ h1{
     background-position: 0% 50%;
   }
 }
+}
+
+.bottom {
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
+}
+
+.pic-box {
+  width: 270px;
+  height: 250px;
+  border-radius: 5px;
 }

@@ -1,10 +1,10 @@
 .btn {
-  color: $white;
-  background-color: $pale-green;
+  color: $lightest;
+  background-color: $grass;
   border-color: none;
   &:hover {
-    color: $pale-green;
-    background-color: $white;
-    border-color: $pale-green;
+    color: $grass;
+    background-color: $lightest;
+    border-color: $grass;
   }
 }

@@ -21,7 +21,7 @@
       <h3>My Saved Events</h3>
       <div class="timeline">
         <% @user.events.each do |event| %>
-        <%= link_to event.title, event_path(event) %>
+        <%= button_to event.title, event_path(event), class: "btn" %>
         <%= link_to event.episode.podcast.LN_image_URL %>
         <% end %>
       </div>
@@ -31,7 +31,7 @@
     <section class="pod-cards">
       <% @user.participations.each do |participation|  %>
       <ul>
-        <%= link_to participation.event.title, event_path(participation.event) %>
+        <%= button_to participation.event.title, event_path(participation.event), class: "btn" %>
        </ul>
         <% end %>
     </section>
@@ -43,7 +43,7 @@
     <% @user.participations.each do |participation|  %>
       <ul>
         <img src=<%=participation.event.episode.podcast.LN_image_URL %>>
-        <%= link_to participation.event.title, event_path(participation.event) %>
+        <%= button_to participation.event.title, event_path(participation.event), class: "btn" %>
       </ul>
     <% end %>
   </div>

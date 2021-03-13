@@ -34,15 +34,10 @@ body{
   width: 100px;
   height: 40px;
   color: black;
-  background-color: $main-orange;
+  background-color: $pale-blue;
   text-align: center;
   padding: 5px 5px;
   border-radius: 5px;
-}
-
-.event:hover{
-  background-color: $light-orange;
-  color: #A9A9A9;
 }
 
 .saved{

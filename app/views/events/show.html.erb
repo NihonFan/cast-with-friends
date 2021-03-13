@@ -1,16 +1,3 @@
-<div class="container">
-  <div class="container-show">
-    <h1> Welcome to: <%= @event.title %>  </h1>
-    <h2> <%= @event.description %>  </h2>
-    <h3>Hosted by <%= @event.user.username %></h3>
-    <h4> Podcast title: <%= @event.episode.podcast.LN_title %>  </h4>
-    <h4> Episode: <%= @event.episode.LN_title %>  </h4>
-    <a id="audio-file"> <% @event.episode.LN_audio_URL %>  </a>
-  </div>
-<!--
-  <button id="audio-button" type="button" class="btn btn-primary">Play Audio</button>
-  <button id="audio-pause" type="button" class="btn btn-primary">Pause Audio</button> -->
-
 <div class="container-show">
   <div class="container">
     <h2>The podcast you are going to listen 🎧</h2>
@@ -23,21 +10,19 @@
     <p>Podcast: <%= @event.episode.podcast.LN_title %><br>
       Episode: <%= @event.episode.LN_title %></p>
 
-<div id="event" class="container-show" data-event-id="<%= @event.id %>">
-  <h1> Event: <%= @event.title %>  </h1>
-  <h1> <%= @event.description %>  </h1>
-  <h1> Podcast: <%= @event.episode.podcast.LN_title %>  </h1>
-  <h1> Episode: <%= @event.episode.LN_title %>  </h1>
-  <a id="audio-file"> <%= @event.episode.LN_audio_URL %>  </a>
-  <button id="audio-button" type="button" class="btn btn-primary">Play Audio</button>
-  <button id="audio-pause" type="button" class="btn btn-primary">Pause Audio</button>
-</div>
-
-
-
-
+    <div id="event" class="container-show" data-event-id="<%= @event.id %>">
+      <!-- <a id="audio-file"> <%= @event.episode.LN_audio_URL %>  </a> -->
+      <div class="row">
+        <div class="col">
+          <button id="audio-button" type="button" class="btn">Play Audio</button>
+        </div>
+        <div class="col">
+          <button id="audio-pause" type="button" class="btn">Pause Audio</button>
+        </div>
+      </div>
+    </div>
     <div class="link">
-      <a><%= @event.episode.LN_audio_URL %></a>
+      <a class="audioURL"><%= @event.episode.LN_audio_URL %></a>
     </div>
   </div>
 </div>

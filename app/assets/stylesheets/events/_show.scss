@@ -1,25 +1,14 @@
 .container-show{
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: auto;
-  margin: 20px 20px;
-  padding: 30px 30px;
-  background: $main-green;
   text-align: center;
-  border-radius: 10px;
+  padding-top: 15vh;
 }
 
-
-.link{
-  width: 150px;
-  height: 30px;
-  text-align: center;
-  color: black;
-  background: $main-orange;
-  border-radius: 5px;
+.audioURL {
+  display: none;
 }
 
-.link:hover{
-  background: $main-orange;
+#audio-pause, #audio-button {
+  background-color: $blue-green;
 }

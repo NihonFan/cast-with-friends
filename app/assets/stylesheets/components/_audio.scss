@@ -4,16 +4,16 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   letter-spacing: -0.5px;
 }
-button {
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    outline: none;
-    width: 40px;
-    height: 40px;
-    float: left;
-}
+// button {
+//     padding: 0;
+//     border: 0;
+//     background: transparent;
+//     cursor: pointer;
+//     outline: none;
+//     width: 40px;
+//     height: 40px;
+//     float: left;
+// }
 #audio-player-container {
       --seek-before-width: 0%;
     --volume-before-width: 100%;

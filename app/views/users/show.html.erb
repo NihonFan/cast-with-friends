@@ -1,31 +1,45 @@
-
-  <div class="container-user">
-    <div class="h">
-      <h1><strong>Hello, <%= @user.username %></strong>😀</h1>
-    </div>
-    <div class="text">
-      <p> <%= @user.email %> </p>
-
-  <div class="container">
-    <p> Created Events: </p>
-    <div class="list">
-      <% @user.events.each do |event| %>
-        <%= link_to event.title, event_path(event) %>
-      <% end %>
-      </div>
-  </div>
-  <div class="container">
-    <div class="list">
-      <p> Events where I am Participating: </p>
-      <% @user.participations.each do |participation|  %>
-      <ul>
-      <%= link_to participation.event.title, event_path(participation.event) %>
-      </ul>
-      <% end %>
-    </div>
-    <%= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
-    </div>
+<div class="home-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn5.vectorstock.com/i/1000x1000/43/69/cartoon-people-at-camping-leisure-with-yellow-tent-vector-26874369.jpg)">
+  <div style="display: inline;">
+    <h1 style="text-align:center;"><strong>Cast with Friends</strong></h1>
+    <h3 style="text-align:center;"><strong>Gather around the digital campfire</strong></h3>
   </div>
 </div>
+
+<div class="container-user">
+  <div class="container">
+    <div class="user">
+      <h3><strong>Hello, <%= @user.username %></strong>😀</h3>
+      <p><%= @user.email %></p>
+    </div>
+
+    <div class="float-wrap">
+      <ul class ="event"><p>Events+</p></ul>
+      <ul class ="event"><p>History</p></ul>
+    </div>
+
+    <section class="saved">
+      <h3>My Saved Events</h3>
+      <div class="timeline">
+        <% @user.events.each do |event| %>
+        <%= link_to event.title, event_path(event) %>
+        <% end %>
+        !--need to add timeline here --!
+      </div>
+    </section>
+
+    <h3>Events where I am Participating:</h3>
+    <section class="pod-cards">
+      <% @user.participations.each do |participation|  %>
+      <ul>
+        <%= link_to participation.event.title, event_path(participation.event) %>
+       </ul>
+        <% end %>
+    </section>
+
+    <%= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
+  </div>
+</div>
+
+
 
 

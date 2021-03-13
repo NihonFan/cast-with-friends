@@ -7,19 +7,22 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
 @import "flatpickr/dist/flatpickr";
+// Your CSS partials
+@import "components/index";
+@import "components/audio";
+@import "components/form";
+@import "components/link";
 
 // Your CSS partials
 @import "components/index";
 @import "components/audio";
-
 @import "pages/index";
 @import "events/index";
 @import "events/show";
 @import "events/new";
 @import "users/show";
 
-body {
+.container {
   min-height: 75vh;
 }

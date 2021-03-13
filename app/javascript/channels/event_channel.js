@@ -15,6 +15,23 @@ const initEventCable = () => {
         .then((response) => response.json())
         .then((data) => {
 
+          AgoraRTC.getDevices()
+            .then(devices => {
+              const audioDevices = devices.filter(function(device){
+                  return device.kind === "audioinput";
+              });
+              var selectedMicrophoneId = audioDevices[0].deviceId;
+              return Promise.all([
+                AgoraRTC.createMicrophoneAudioTrack({ microphoneId: selectedMicrophoneId }), 0
+              ]);
+            })
+            .then((audioTrack) => {
+              setInterval(() => {
+                const level = audioTrack[0].getVolumeLevel();
+                console.log("local stream audio level", level);
+              }, 1000);
+            });
+
           var rtc = {
             // For the local client.
             client: null,
@@ -28,7 +45,7 @@ const initEventCable = () => {
             // Set the channel name.
             channel: id,
             // Pass a token if your project enables the App Certificate.
-            token: document.getElementById('agora-temp-token').innerHTML
+            token: document.getElementById('agora-temp-token').innerText
           };
 
           const client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
@@ -40,7 +57,6 @@ const initEventCable = () => {
           async function leaveBasicCall() {
             await client.leave();
           }
-
 
 
 

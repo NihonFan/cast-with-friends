@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
     current_time_stamps = Time.now.to_i
 
-    params = {
+    keys = {
       app_id: 'c8884b4e78204e869b61c7022282e104',
       app_certificate: '6b7de680b0354e6986cf0fc7094cff6d',
       channel_name: "#{@event.id}",
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
       privilege_expired_ts: current_time_stamps + expiration_time_in_seconds
     }
 
-    result = AgoraDynamicKey::RTCTokenBuilder.build_token_with_uid params
+    result = AgoraDynamicKey::RTCTokenBuilder.build_token_with_uid keys
     @temp_token = result
 
   end

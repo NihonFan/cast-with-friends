@@ -3,11 +3,13 @@
   top: 5%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 250px;
+  justify-content: center;
   height: 400px;
-  background: $main-orange;
+  background: $light-blue;
   text-align: center;
+  padding: 2em;
+  margin-right: 2em;
+  border-radius: 5px;
 }
 
 
@@ -25,26 +27,26 @@
   justify-content: space-between;
   float: right;
   height: fit-content;
-  padding: 10px;
-  background: $bright-blue;
   text-align: center;
 }
 
 
 .card-product {
+  margin-bottom: 2em;
   padding: 20px;
-  margin: 20px;
-  width: 400px;
-  height: auto;
-  background: white;
+  height: fit-content;
   display: grid;
+  background: $bright-blue;
+  border: 2px solid $dark-green;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
+// .card-product img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
 
 .card-product .card-product-infos {
   padding: 16px;

@@ -1,30 +1,26 @@
-<h1>Events</h1>
 
 <div class="container">
-    <div class="sticky-note">
+  <h1>Events</h1>
+  <div class="row">
+    <div class="sticky-note col-3">
       <p>If you bookmark an event, you'll be receive notifications about the event</p>
-      <!-- <div class="booking">
-        <p>Reserve a seat</p>
-      </div> -->
       <p>Add as many events as you want, and discuss with various people!</p>
     </div>
-        <div class="row col-xs-12">
-      <div class="pocast-list">
-          <% @events.each do |event| %>
-           <div class="card-product">
-             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-             <div class="card-product-infos">
-               <h2><%= link_to event.title, event_participations_path(event), method: :post %></h2>
-               <p><%= event.description %></p>
-               <p><%= event.date %></p>
-               <p>Participants:
-                 <% event.participations.each do |participation| %>
-                   <%= participation.user.username %>
-                 <% end %>
-               </p>
-             </div>
+    <div class="pocast-list col">
+        <% @events.each do |event| %>
+         <div class="card-product">
+           <div class="card-product-infos">
+             <h2><%= button_to event.title, event_participations_path(event), class: "btn" %></h2>
+             <p><%= event.description %></p>
+             <p><%= event.date %></p>
+             <p>Participants:
+               <% event.participations.each do |participation| %>
+                 <%= participation.user.username %>
+               <% end %>
+             </p>
            </div>
-        <% end %>
-       </div>
-    </div>
+         </div>
+      <% end %>
+     </div>
+  </div>
  </div>

@@ -11,7 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "components/audio";
-@import "flatpickr/dist/flatpickr";
+@import "components/form";
+@import "components/link";
 
 // Your CSS partials
 @import "components/index";
@@ -22,6 +23,6 @@
 @import "events/new";
 @import "users/show";
 
-body {
+.container {
   min-height: 75vh;
 }

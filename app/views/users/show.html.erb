@@ -22,8 +22,8 @@
       <div class="timeline">
         <% @user.events.each do |event| %>
         <%= link_to event.title, event_path(event) %>
+        <%= link_to event.episode.podcast.LN_image_URL %>
         <% end %>
-        !--need to add timeline here --!
       </div>
     </section>
 
@@ -35,6 +35,22 @@
        </ul>
         <% end %>
     </section>
+
+<h3>Evenets where I am participating:</h3>
+<div class="card-product">
+
+  <div class="card-product-infos">
+    <% @user.participations.each do |participation|  %>
+      <ul>
+        <img src=<%=participation.event.episode.podcast.LN_image_URL %>>
+        <%= link_to participation.event.title, event_path(participation.event) %>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
+
+
 
     <%= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
   </div>

@@ -4,7 +4,11 @@ import {Howl, Howler} from 'howler';
 const load_audio = () => {
   window.howler_audio = new Howl({
   src: [ document.getElementById('audio-file').innerText ],
-  html5: true
+  html5: true,
+  // preload: true
+  // sprite: {
+  //     key1: [200, 200]
+  //   }
 });
 }
 

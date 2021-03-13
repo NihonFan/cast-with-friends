@@ -40,10 +40,10 @@ class EventsController < ApplicationController
     authorize @event
 
     if @event.state == "playing"
-      a
+
       EventChannel.broadcast_to(
         @event,
-        "playing"
+        "play"
       )
 
     else
@@ -66,7 +66,7 @@ class EventsController < ApplicationController
 
       EventChannel.broadcast_to(
         @event,
-        "playing"
+        "play"
       )
     end
 

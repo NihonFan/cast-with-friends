@@ -11,10 +11,16 @@ const initEventCable = () => {
         .then((response) => response.json())
         .then((data) => {
           if (data.state === "playing") {
-            window.howler_audio.pause();
-            window.howler_audio.seek(data.elapsed_seconds);
+            if (window.audio_id) {
+              // window.howler_audio.pause();
+              window.howler_audio.seek(data.elapsed_seconds, window.audio_id);
+              window.howler_audio.play(window.audio_id);
+            } else {
+              window.audio_id = window.howler_audio.play();
+              window.howler_audio.seek(data.elapsed_seconds, window.audio_id);
+            }
+
             // .then(() => {
-            window.howler_audio.play(window.howler_audio.id);
             // window.howler_audio.seek(data.elapsed_seconds).play(howler_audio._sounds._id);
             // window.howler_audio.play();
           } else if (data.state === "paused") {

@@ -1,4 +1,5 @@
 import "../plugins/flatpickr";
+import "../plugins/dahs-time";
 import { play_audio } from "../plugins/howler";
 import { pause_audio } from "../plugins/howler";
 import { load_audio } from "../plugins/howler";

@@ -12,9 +12,11 @@
     <ul class="navbar-nav mr-auto">
 
       <nav>
+      <% if current_user.present? %>
         <%= link_to "Events", events_path %>
         <%= link_to "Dashboard", user_path(current_user)%>
         <div id="indicator"></div>
+      <% end %>
       </nav>
       <% if current_user.present?  %>
         <li id="mag"><%= render 'shared/searchbar' %></li>

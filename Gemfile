@@ -37,6 +37,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+gem 'agora_dynamic_key', require: 'dynamic_key'
+
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

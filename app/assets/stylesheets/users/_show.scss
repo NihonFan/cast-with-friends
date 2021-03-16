@@ -25,9 +25,20 @@
   overflow: hidden;
 }
 
+
 .saved{
   margin: 10px;
   padding: 10px;
+}
+
+.event{
+  width: 100px;
+  height: 40px;
+  color: black;
+  background-color: $pale-blue;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 5px;
 }
 
 .timeline{
@@ -60,6 +71,26 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+}
+
+.greetings {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #002963, #fff, #B7C0D4);
+  background-size: 80%;
+  animation: animate 6s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
 }
 
 

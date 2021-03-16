@@ -1,5 +1,3 @@
-require_relative "./lib/dynamic_key"
-
 class EventsController < ApplicationController
 
   skip_before_action :verify_authenticity_token

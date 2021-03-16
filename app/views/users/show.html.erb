@@ -8,15 +8,15 @@
 <div class="container-user">
   <div class="container">
     <div class="user">
-      <h3><strong>Hello, <%= @user.username %></strong>😀</h3>
-      <p><%= @user.email %></p>
+      <h3 class="greetings"><strong>Hello, <%= @user.username %></strong></h3>
+      <p style="letter-spacing: 2px;"><%= @user.email %></p>
     </div>
 
     <div class="float-wrap">
       <ul class ="event"><p>Events+</p></ul>
       <ul class ="event"><p>History</p></ul>
     </div>
-
+    <br>
     <section class="saved">
       <h3>My Saved Events</h3>
       <div class="timeline">

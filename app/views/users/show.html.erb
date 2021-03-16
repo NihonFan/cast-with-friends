@@ -1,3 +1,61 @@
+<h1>Your upcoming events</h1>
+<div class="flex-parent">
+  <div class="input-flex-container">
+    <% @user.events.each do |event| %>
+    <div class="input">
+      <span data-year="<%= event.date %>" data-info="<%= event.title %>"></span>
+    </div>
+    <% end %>
+    <!-- <div class="input">
+      <span data-year="1910" data-info="headset"></span>
+    </div>
+    <div class="input">
+      <span data-year="1920" data-info="jungle gym"></span>
+    </div>
+    <div class="input active">
+      <span data-year="1930" data-info="chocolate chip cookie"></span>
+    </div>
+    <div class="input">
+      <span data-year="1940" data-info="Jeep"></span>
+    </div>
+    <div class="input">
+      <span data-year="1950" data-info="leaf blower"></span>
+    </div>
+    <div class="input">
+      <span data-year="1960" data-info="magnetic stripe card"></span>
+    </div>
+    <div class="input">
+      <span data-year="1970" data-info="wireless LAN"></span>
+    </div>
+    <div class="input">
+      <span data-year="1980" data-info="flash memory"></span>
+    </div>
+    <div class="input">
+      <span data-year="1990" data-info="World Wide Web"></span>
+    </div>
+    <div class="input">
+      <span data-year="2000" data-info="Google AdWords"></span>
+    </div> -->
+  </div>
+  <div class="description-flex-container">
+    <% @user.events.each do |event| %>
+    <p><%= event.description %></p>
+    <% end %>
+    <p>And future Call of Duty players would thank them.</p>
+    <p>Because every kid should get to be Tarzan for a day.</p>
+    <p class="active">And the world rejoiced.</p>
+    <p>Because building roads is inconvenient.</p>
+    <p>Ain’t nobody got time to rake.</p>
+    <p>Because paper currency is for noobs.</p>
+    <p>Nobody likes cords. Nobody.</p>
+    <p>Brighter than glow memory.</p>
+    <p>To capitalize on an as-yet nascent market for cat photos.</p>
+    <p>Because organic search rankings take work.</p>
+  </div>
+</div>
+
+
+
 <div class="home-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn5.vectorstock.com/i/1000x1000/43/69/cartoon-people-at-camping-leisure-with-yellow-tent-vector-26874369.jpg)">
   <div style="display: inline;">
     <h1 style="text-align:center;"><strong>Cast with Friends</strong></h1>

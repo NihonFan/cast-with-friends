@@ -50,15 +50,47 @@ const initEventCable = () => {
 
           const client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
 
+          client.on("user-published", async (user, mediaType) => {
+            // Subscribe to a remote user.
+            await client.subscribe(user, mediaType);
+            console.log("subscribe success");
+
+            // If the subscribed track is audio.
+            if (mediaType === "audio") {
+              // Get `RemoteAudioTrack` in the `user` object.
+              window.remoteAudioTrack = user.audioTrack;
+              // Play the audio track. No need to pass any DOM element.
+              window.remoteAudioTrack.play();
+            }
+          });
+
+          client.on("user-unpublished", async (user, mediaType) => {
+            // Subscribe to a remote user.
+            await client.unsubscribe(user, mediaType);
+            console.log("unsubscribe success");
+
+            // If the subscribed track is audio.
+            if (mediaType === "audio") {
+              // Get `RemoteAudioTrack` in the `user` object.
+              // Play the audio track. No need to pass any DOM element.
+              if (window.remoteAudioTrack) {
+                window.remoteAudioTrack.pause();
+              };
+            }
+          });
+
           async function startBasicCall() {
             await client.join(options.appId, options.channel, options.token, null);
+            window.localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
+            await client.publish(window.localAudioTrack);
           }
 
           async function leaveBasicCall() {
+            console.log("ready to unpublish")
+            await client.unpublish(window.localAudioTrack);
             await client.leave();
+            console.log("finished unpublishing")
           }
-
-
 
           if (data.state === "playing") {
             leaveBasicCall();

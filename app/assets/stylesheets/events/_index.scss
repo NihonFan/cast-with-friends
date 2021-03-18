@@ -50,6 +50,26 @@
 //   object-fit: cover;
 // }
 
+.events {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #B7C0D4, #002963, #fff, #B7C0D4);
+  background-size: 80%;
+  animation: animate 6s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
 .card-product .card-product-infos {
   padding: 16px;
 }

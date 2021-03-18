@@ -28,12 +28,13 @@ h1 {
 .input-flex-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
   width: $parentWidth;
   height: 200px;
   max-width: $parentMaxWidth;
   position: relative;
   z-index: 0;
+  margin-bottom: 5em;
 }
 
 .input {

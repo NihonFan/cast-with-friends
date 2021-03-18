@@ -1,3 +1,23 @@
+<div class="home-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn5.vectorstock.com/i/1000x1000/43/69/cartoon-people-at-camping-leisure-with-yellow-tent-vector-26874369.jpg)">
+  <div style="display: inline;">
+    <h1 style="text-align:center;"><strong>Cast with Friends</strong></h1>
+    <h3 style="text-align:center;"><strong>Gather around the digital campfire</strong></h3>
+  </div>
+</div>
+
+<div class="container-user">
+  <div class="container">
+    <div class="user">
+      <h3 class="greetings"><strong>Hello, <%= @user.username %></strong></h3>
+      <p style="letter-spacing: 2px;"><%= @user.email %></p>
+    </div>
+
+    <div class="float-wrap">
+      <ul class ="btn"><p>Events+</p></ul>
+      <ul class ="btn"><p>History</p></ul>
+    </div>
+    <br>
+
 <h1>Your upcoming events</h1>
 <div class="flex-parent">
   <div class="input-flex-container">
@@ -39,53 +59,14 @@
   </div>
   <div class="description-flex-container">
     <% @user.events.each do |event| %>
-    <p><%= event.description %></p>
+    <p><a href="<%= event_path(event) %>"><%= event.description %> 🎧</a></p>
+<!--     <%= button_to event.title, event_path(event), method: :get, class: "btn" %>
+ --> <!--    <%= link_to event.episode.podcast.LN_image_URL %> -->
     <% end %>
-    <p>And future Call of Duty players would thank them.</p>
-    <p>Because every kid should get to be Tarzan for a day.</p>
-    <p class="active">And the world rejoiced.</p>
-    <p>Because building roads is inconvenient.</p>
-    <p>Ain’t nobody got time to rake.</p>
-    <p>Because paper currency is for noobs.</p>
-    <p>Nobody likes cords. Nobody.</p>
-    <p>Brighter than glow memory.</p>
-    <p>To capitalize on an as-yet nascent market for cat photos.</p>
-    <p>Because organic search rankings take work.</p>
   </div>
-</div>
 
 
-
-<div class="home-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn5.vectorstock.com/i/1000x1000/43/69/cartoon-people-at-camping-leisure-with-yellow-tent-vector-26874369.jpg)">
-  <div style="display: inline;">
-    <h1 style="text-align:center;"><strong>Cast with Friends</strong></h1>
-    <h3 style="text-align:center;"><strong>Gather around the digital campfire</strong></h3>
-  </div>
-</div>
-
-<div class="container-user">
-  <div class="container">
-    <div class="user">
-      <h3 class="greetings"><strong>Hello, <%= @user.username %></strong></h3>
-      <p style="letter-spacing: 2px;"><%= @user.email %></p>
-    </div>
-
-    <div class="float-wrap">
-      <ul class ="btn"><p>Events+</p></ul>
-      <ul class ="btn"><p>History</p></ul>
-    </div>
-    <br>
-    <section class="saved">
-      <h3>My Saved Events</h3>
-      <div class="timeline">
-        <% @user.events.each do |event| %>
-        <%= button_to event.title, event_path(event), method: :get, class: "btn" %>
-        <%= link_to event.episode.podcast.LN_image_URL %>
-        <% end %>
-      </div>
-    </section>
-
-<h3>Events where I am participating:</h3>
+<h1>Events where I am participating:</h1>
 <div class="card-product">
 
   <div class="card-product-infos">

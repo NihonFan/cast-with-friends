@@ -43,7 +43,17 @@ document.addEventListener('turbolinks:load', () => {
   load_audio();
   play_audio();
   pause_audio();
-  initEventCable();
+
+  const eventContainer = document.getElementById('event');
+
+  if (eventContainer) {
+    const id = eventContainer.dataset.eventId;
+    initEventCable(id);
+  }
+  // else {
+    // make sure the agora sdk is not being accessed
+  // }
+
 });
 
 $('#myModal').on('shown.bs.modal', function () {

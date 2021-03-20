@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     @event.participant_list = @event.participant_list.push(current_user.id)
 
     @event.participant_list.uniq!
-    @event.save
+    @event.save!
 
     EventChannel.broadcast_to(
       @event,

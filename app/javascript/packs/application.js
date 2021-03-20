@@ -49,6 +49,11 @@ document.addEventListener('turbolinks:load', () => {
   if (eventContainer) {
     const id = eventContainer.dataset.eventId;
     initEventCable(id);
+  } else if (window.localAudioTrack) {
+    window.localAudioTrack.stop();
+    window.localAudioTrack.close();
+    window.localAudioTrack = null;
+    window.client.leave();
   }
   // else {
     // make sure the agora sdk is not being accessed

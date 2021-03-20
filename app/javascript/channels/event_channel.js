@@ -60,6 +60,16 @@ const initEventCable = async (eventId) => {
       .then((response) => response.json())
       .then((data) => {
 
+        let str = "";
+
+        data.participant_list_names.forEach((participant_name) => {
+          console.log("adding names");
+          str += participant_name + " ";
+        })
+
+        document.getElementById('participant-list').innerHTML = str;
+
+
         if (data.state === "playing") {
 
           window.localAudioTrack.setEnabled(false);

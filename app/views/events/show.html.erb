@@ -36,13 +36,9 @@
       <a id="audio-file" class="audioURL"><%= @event.episode.LN_audio_URL %></a>
     </div>
     <div style= "opacity: 0;" id="agora-temp-token"> <%= @temp_token %> </div>
-      <h2 class="text-left">Participants</h2>
-    <div class="d-flex justify-content-around row">
-      <% @event.participations.each do |par| %>
-        <div id="userbox" class="col-2 d-flex-wrap p-4 m-3">
-          <p><%= par.user.username %></p>
-        </div>
-      <% end %>
+    <h2 class="text-left">Participants</h2>
+    <div id="participant-list" class="d-flex justify-content-around row">
+
     </div>
   </div>
 </div>

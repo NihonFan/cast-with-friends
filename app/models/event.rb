@@ -9,6 +9,7 @@ class Event < ApplicationRecord
   validates :description, presence: true
   validates :date, presence: true
 
+
   def elapsed_seconds
     if self.state != "unplayed"
       Time.now - (started_at) - (paused_seconds || 0)
@@ -16,6 +17,14 @@ class Event < ApplicationRecord
     else
       0
     end
+  end
+
+  def participant_list_names
+    name_array = []
+    self.participant_list.each do |id|
+      name_array << User.find(id).username
+    end
+    return name_array
   end
 
 end

@@ -44,12 +44,15 @@ document.addEventListener('turbolinks:load', () => {
   play_audio();
   pause_audio();
 
+  console.log("turbolinks loading?")
+
   const eventContainer = document.getElementById('event');
 
   if (eventContainer) {
     const id = eventContainer.dataset.eventId;
     initEventCable(id);
-  } else if (window.localAudioTrack) {
+  } else if (window.client) {
+    console.log("is this close track working?")
     window.localAudioTrack.stop();
     window.localAudioTrack.close();
     window.localAudioTrack = null;

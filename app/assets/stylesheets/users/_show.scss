@@ -4,8 +4,8 @@ $parentWidth: $parentWidthBase * 100vw;
 $parentMaxWidth: 1000px;
 $dotWidth: 25px;
 $dotWidthSm: 17px;
-$active: #2C3E50;
-$inactive: #AEB6BF;
+$active: $redy;
+$inactive: redyth;
 
 @function random_range($min, $max) {
   $rand: random();
@@ -178,7 +178,9 @@ h1 {
   }
 }
 
-
+.dash {
+  color: $redy !important;
+}
 
 // @media (min-width: $parentMaxWidth / $parentWidthBase)
 //   .input::before {
@@ -274,7 +276,7 @@ h1 {
  }
 
 .container {
-  color: white;
+  color: $lightest;
   margin-right: auto;
   margin-left: auto;
   margin-top: 30px;
@@ -306,8 +308,8 @@ h1 {
   width: auto;
   height: fit-content;
   color: black;
-  background-color: $pale-blue;
-  border: 1px solid $pale-blue;
+  background-color: $lightest;
+  border: 1px solid $redyth;
   border-radius: 10px;
 }
 
@@ -336,7 +338,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 4px;
   overflow: hidden;
-  background: linear-gradient(90deg, #B7C0D4, #002963, #fff, #B7C0D4);
+  background: linear-gradient(90deg, $redy, $redyo, $redytw, $redyth);
   background-size: 80%;
   animation: animate 6s linear infinite;
   -webkit-background-clip: text;

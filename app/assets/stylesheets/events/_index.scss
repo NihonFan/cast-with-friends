@@ -5,12 +5,12 @@
   flex-direction: column;
   justify-content: center;
   height: 400px;
-  background: $light-blue;
+  background: $lightest;
   text-align: center;
   padding: 2em;
   margin-right: 2em;
   border-radius: 5px;
-  border: 2px $clay solid;
+  border: 4px $redyth solid;
 }
 
 
@@ -37,8 +37,8 @@
   padding: 20px;
   height: fit-content;
   display: grid;
-  background: $soft-blue;
-  border: 2px solid $strong-blue;
+  background: $redytw;
+  border: 2px solid $redyth;
   padding: 5px;
   border-radius: 5px;
   color: $lightest;
@@ -54,7 +54,7 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   overflow: hidden;
-  background: linear-gradient(90deg, #B7C0D4, #002963, #fff, #B7C0D4);
+  background: linear-gradient(90deg, $redy, $redyo, $redytw, $redyth);
   background-size: 80%;
   animation: animate 6s linear infinite;
   -webkit-background-clip: text;

@@ -1,12 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $strong-blue;
+  background: $lightest;
   top:0;
+  border-bottom: 2px $redy solid;
   .navbar-collapse {
     flex-grow: 0;
   }
   .navbar-brand img {
-    width: 40px;
+    width: 200px;
   }
 }
 
@@ -26,10 +27,6 @@
   li {
     padding: 0 1em !important;
   }
-}
-
-img {
-  border-radius: 50px;
 }
 
 #mag {
@@ -56,7 +53,7 @@ nav a
     width: 33.333%;
     display: table-cell;
     text-align: center;
-    color: $soft-blue;
+    color: $redy;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -92,22 +89,22 @@ nav a:after
 
 nav a:nth-child(1):before
 {
-    background-color: $lightest;
+    background-color: $redy;
 }
 
 nav a:nth-child(1):after
 {
-    background-color: $soft-blue;
+    background-color: $redyo;
 }
 
 nav a:nth-child(2):before
 {
-    background-color: $grass;
+    background-color: $redytw;
 }
 
 nav a:nth-child(2):after
 {
-    background-color: $clay;
+    background-color: $redyth;
 }
 
 // nav a:nth-child(3):before
@@ -127,14 +124,14 @@ nav a:nth-child(2):after
     bottom: 0;
     width: 30px;
     height: 3px;
-    background-color: $lightest;
+    background-color: $redy;
     border-radius: 5px;
     transition: 0.2s ease left;
 }
 
 nav a:hover
 {
-    color: $lightest;
+    color: $redyth;
 }
 
 nav a:hover:before, nav a:hover:after
@@ -144,13 +141,13 @@ nav a:hover:before, nav a:hover:after
 
 nav a:nth-child(1):hover ~ #indicator
 {
-    background: linear-gradient(130deg, $soft-blue, $light-blue);
+    background: linear-gradient(130deg, $redy, $redyo);
 }
 
 nav a:nth-child(2):hover ~ #indicator
 {
     left: 34%;
-    background: linear-gradient(130deg, $grass, $clay);
+    background: linear-gradient(130deg, $redytw, $redyth);
 }
 
 // nav a:nth-child(3):hover ~ #indicator

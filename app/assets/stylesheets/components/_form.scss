@@ -1,11 +1,11 @@
 .form-login {
-  background: $soft-blue;
+  background: $lightest;
   padding: 10px 20px;
   margin-top: 15vh;
   border-radius: 3px;
-  box-shadow: 10px 10px 10px $soft-blue;
-  border: 2px white solid;
-  color: $lightest;
+  box-shadow: 10px 10px 10px $redyth;
+  border: 2px $redy solid;
+  color: $redy;
 
   h2 {
     font-size: 25px;
@@ -24,7 +24,7 @@
   }
   input:checked::after {
     content: "\2713";
-    background-color: $grass;
+    background-color: $redyz;
     color: $lightest;
     // top: 50%;
     // -webkit-transform: translateY(-50%);

@@ -1,5 +1,5 @@
-$numDots: 20;
-$parentWidthBase: 0.8;
+$numDots: 1;
+$parentWidthBase: 0.4;
 $parentWidth: $parentWidthBase * 100vw;
 $parentMaxWidth: 1000px;
 $dotWidth: 25px;
@@ -64,7 +64,8 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+  padding: 0 0 0 3em;
   width: 100%;
   height: 100%;
 }
@@ -103,10 +104,10 @@ h1 {
     max-width: $parentMaxWidth / $numDots;
   }
   &::before {
-    left: calc(#{-$parentWidth / $numDots} + #{$dotWidth / 2});
+    // left: calc(#{-$parentWidth / $numDots} + #{$dotWidth / 2});
   }
   &::after {
-    right: calc(#{-$parentWidth / $numDots} + #{$dotWidth / 2});
+    // right: calc(#{-$parentWidth / $numDots} + #{$dotWidth / 2});
   }
   &.active {
     background-color: $active;
@@ -161,7 +162,7 @@ h1 {
   }
 }
 .description-flex-container {
-  width: $parentWidth;
+  width: 100vw;
   font-weight: 400;
   font-size: 22px;
   // margin-top: 100px;

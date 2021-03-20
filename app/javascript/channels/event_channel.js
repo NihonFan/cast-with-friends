@@ -4,7 +4,7 @@ import AgoraRTC from "agora-rtc-sdk-ng"
 
 const initEventCable = async (eventId) => {
 
-  const client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
+  window.client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
 
   async function createAudioTrack () {
     window.localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
@@ -25,13 +25,13 @@ const initEventCable = async (eventId) => {
 
   console.log("hello")
 
-  client.on("user-published", async (user, mediaType) => {
+  window.client.on("user-published", async (user, mediaType) => {
     // Subscribe to a remote user.
     console.log("subscribe success");
 
 
 
-    await client.subscribe(user, mediaType);
+    await window.client.subscribe(user, mediaType);
 
     // If the subscribed track is audio.
 
@@ -47,8 +47,8 @@ const initEventCable = async (eventId) => {
 
   // client.on("user-joined");
 
-  await client.join(options.appId, options.channel, options.token, null);
-  await client.publish(window.localAudioTrack);
+  await window.client.join(options.appId, options.channel, options.token, null);
+  await window.client.publish(window.localAudioTrack);
 
   // window.remoteAudioTracks.forEach ((track) => {
   //   track.play();

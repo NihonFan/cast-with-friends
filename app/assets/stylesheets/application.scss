@@ -27,6 +27,11 @@
 .container {
   min-height: 65vh;
 }
-body{
-  background: linear-gradient(-180deg, $soft-blue 15%, $light-blue, $strong-blue 80%);
+// body{
+//   background: linear-gradient(-180deg, $soft-blue 15%, $light-blue, $strong-blue 80%);
+// }
+
+body {
+    background-repeat: repeat-y;
+    background: #f2f2f2;
 }

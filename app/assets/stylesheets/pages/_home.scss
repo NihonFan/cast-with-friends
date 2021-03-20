@@ -1,11 +1,70 @@
 // Specific CSS for your home-page
-.home-picture {
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 280px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#home {
+  clip-path: url(#cache);
+}
+
+#red {
+/*   fill: none; */
+  opacity: 1;
+  stroke: #9E1545;
+  stroke-width: 12;
+  stroke-miterlimit:10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#blue {
+  fill: none;
+  opacity: 0.4;
+  stroke:#AB164A;
+  stroke-width: 12;
+  stroke-miterlimit:10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#light-blue {
+  fill: none;
+  opacity: 0.6;
+  stroke: #EB1E66;
+  stroke-width: 6;
+  stroke-miterlimit:10;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 800;
+  animation: draw 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+ }
+
+
+
+
+
+
+
+
+// .home-picture {
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   height: 280px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.container {
+  position: absolute;
 }
 
 .container .box {

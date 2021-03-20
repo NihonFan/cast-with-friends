@@ -1,9 +1,9 @@
 <div class="container">
   <h1 style="text-align:center">Search for a podcast title</h1>
 
-  <div class="box">
+  <div class="box searchbar">
     <%= simple_form_for :title, url: podcasts_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :item, input_html: {value: ""}, label: false %>
+      <%= f.input :podname, input_html: {value: ""}, html: {class: 'podsearch'}, label: false %>
       <%= f.submit "Search", class: "btn" %>
     <% end %>
   </div>

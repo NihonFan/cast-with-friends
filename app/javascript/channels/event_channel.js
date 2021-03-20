@@ -39,6 +39,8 @@ const initEventCable = async (eventId) => {
 
   });
 
+  // client.on("user-joined");
+
   await client.join(options.appId, options.channel, options.token, null);
   await client.publish(window.localAudioTrack);
 
@@ -57,9 +59,9 @@ const initEventCable = async (eventId) => {
           window.localAudioTrack.setEnabled(false);
 
 
-          window.remoteAudioTracks.forEach ((track) => {
-            track.stop();
-          })
+          // window.remoteAudioTracks.forEach ((track) => {
+          //   track.stop();
+          // })
 
           // leaveBasicCall();
           if (window.audio_id) {
@@ -84,9 +86,9 @@ const initEventCable = async (eventId) => {
 
 
 
-          window.remoteAudioTracks.forEach ((track) => {
-            track.play();
-          })
+          // window.remoteAudioTracks.forEach ((track) => {
+          //   track.play();
+          // })
 
 
           // startBasicCall();

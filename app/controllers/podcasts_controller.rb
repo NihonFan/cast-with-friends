@@ -6,7 +6,7 @@ class PodcastsController < ApplicationController
   skip_after_action :verify_authorized, only: [:search, :show]
 
   def index
-    response = URI.open("https://listen-api.listennotes.com/api/v2/search?q=#{params["title"]["item"]}&sort_by_date=0&type=podcast&offset=0&len_min=10&len_max=60&published_before=1580172454000&published_after=0&only_in=title%2Cdescription&language=English&safe_mode=0",
+    response = URI.open("https://listen-api.listennotes.com/api/v2/search?q=#{params["title"]["podname"]}&sort_by_date=0&type=podcast&offset=0&len_min=10&len_max=60&published_before=1580172454000&published_after=0&only_in=title%2Cdescription&language=English&safe_mode=0",
     "X-ListenAPI-Key" => ENV['LISTEN_API_KEY'])
     response_serialized = open(response).read
     json = JSON.parse(response_serialized)

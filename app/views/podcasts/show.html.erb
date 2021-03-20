@@ -1,8 +1,25 @@
-<div id="show">
-  <% @episodes.each do |episode| %>
-    <%= link_to new_episode_event_path(episode), target: "_top" do %>
-      <p><%= episode.LN_title %></p>
-      <p><%= episode.LN_description %></p>
-    <% end %>
-  <% end %>
+<!-- <div id="show">
+  <%# @episodes.each do |episode| %>
+    <%#= link_to new_episode_event_path(episode), target: "_top" do %>
+      <p><%#= episode.LN_title %></p>
+      <p><%#= episode.LN_description %></p>
+    <%# end %>
+  <%# end %>
+</div> -->
+
+<div class="container index">
+  <div class="col-xs-auto">
+    <h1>Episodes</h1>
+    <div class="row col-xs-12">
+      <% @episodes.each do |episode| %>
+      <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <%= link_to new_episode_event_path(episode), target: "_top", class: "nav-link btn" do %>
+          <% @title = episode.LN_title %>
+          <% @description = episode.LN_description %>
+          <%= render 'shared/card' %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

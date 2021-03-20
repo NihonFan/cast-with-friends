@@ -4,10 +4,11 @@
     <div class="row col-xs-12">
       <% @podcasts.each do |podcast| %>
       <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <%= link_to podcast.LN_title, podcast_path(podcast), class: "nav-link btn" %>
-        <%= podcast.LN_description %>
-        <%= podcast.LN_image_URL %>
-        <%= podcast.LN_podcast_id %>
+        <%= link_to podcast_path(podcast), class: "nav-link btn" do %>
+          <% @title = podcast.LN_title %>
+          <% @description = podcast.LN_description %>
+          <%= render 'shared/card' %>
+        <% end %>
       </div>
       <% end %>
     </div>

@@ -70,7 +70,7 @@ h1 {
   height: 100%;
 }
 
-.input-flex-container {
+.mainti-flex-container {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -82,7 +82,7 @@ h1 {
   margin-bottom: 5em;
 }
 
-.input {
+.mainti {
   width: $dotWidth;
   height: $dotWidth;
   background-color: $active;
@@ -127,7 +127,7 @@ h1 {
       }
     }
   }
-  &.active ~ .input {
+  &.active ~ .mainti {
     &, &::before, &::after {
       background-color: $inactive;
     }

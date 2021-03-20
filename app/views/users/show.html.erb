@@ -26,9 +26,9 @@
     <%#= link_to "", event_path(event) %>
     <h1>Upcoming created events</h1>
     <div class="flex-parent">
-      <div class="input-flex-container">
+      <div class="mainti-flex-container">
         <% @user.events.each do |event| %>
-          <div class="input">
+          <div class="mainti">
             <span data-year="<%= event.date %>" data-info="<%= event.title %>"></span>
           </div>
         <% end %>

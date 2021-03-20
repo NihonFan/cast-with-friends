@@ -1,5 +1,5 @@
 $(function(){
-  var inputs = $('.input');
+  var inputs = $('.mainti');
   var paras = $('.description-flex-container').find('p');
   inputs.click(function(){
     var t = $(this),

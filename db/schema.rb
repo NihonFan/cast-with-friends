@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_140900) do
+ActiveRecord::Schema.define(version: 2021_03_20_065109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_140900) do
     t.decimal "seconds_elapsed"
     t.datetime "paused_at"
     t.float "paused_seconds"
+    t.text "participant_list", default: [], array: true
     t.index ["episode_id"], name: "index_events_on_episode_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end

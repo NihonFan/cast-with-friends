@@ -29,6 +29,16 @@ class EventsController < ApplicationController
     result = AgoraDynamicKey::RTCTokenBuilder.build_token_with_uid keys
     @temp_token = result
 
+    @event.participant_list = @event.participant_list.push(current_user.id)
+
+    @event.participant_list.uniq!
+    @event.save
+
+    EventChannel.broadcast_to(
+      @event,
+      "user"
+    )
+
   end
 
   def new

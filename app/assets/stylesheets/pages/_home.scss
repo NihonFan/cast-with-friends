@@ -48,7 +48,9 @@
  }
 
 
-
+svg {
+  height: inherit;
+}
 
 
 
@@ -63,8 +65,17 @@
 //   align-items: center;
 // }
 
+.prt {
+  height: 300vh;
+}
+
 .container {
   position: absolute;
+  background-color: #f2f2f2;
+  height: fit-content;
+  left: 16.5em;
+  margin-top: 0;
+  color: black !important;
 }
 
 .container .box {
@@ -94,9 +105,9 @@
 
 
 
-body {
-  background-color: #023035;
-}
+// body {
+//   background-color: #023035;
+// }
 
 //body {
 //  background: linear-gradient(145deg, rgb(195, 240, 200), rgb(80, 155, 245));;

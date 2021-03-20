@@ -1,9 +1,9 @@
 // audio
 #audio-box {
-  background-color: $strong-blue;
-  box-shadow: 5px 5px 50px 2px $lightest;
+  background-color: $lightest;
+  box-shadow: 5px 5px 50px 2px $redyth;
   border-radius: 25px;
-  color: #fff;
+  color: $redy;
   position: intial;
   width: 100%;
   top: 50%;
@@ -45,18 +45,18 @@ input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 1em;
   user-select: none;
-  background: $strong-blue;
+  background: $lightest;
   border-radius: 0;
-  border: 1px solid $soft-blue;
-  box-shadow: 3px 3px .4em #002963, -.3em 0 .4em $lightest;
+  border: 1px solid $redy;
+  box-shadow: 3px 3px .4em $redy, -.3em 0 .4em $redy;
 }
 input[type="range"]::-webkit-slider-thumb {
-  border: 2px solid $soft-blue;
-  box-shadow: 3px 3px .4em $strong-blue, -.3em 0 .4em $soft-blue;
+  border: 2px solid $redy;
+  box-shadow: 3px 3px .4em $redytw, -.3em 0 .4em $redy;
   height: 2em;
   width: 28px;
   border-radius: 70px;
-  background: $strong-blue;
+  background: $redyth;
   user-select: none;
   -webkit-appearance: none;
   margin-top: -0.5em;
@@ -76,14 +76,14 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 #audio-pause, #audio-button {
-  background-color: $clay;
+  background-color: $redyz;
 }
 
 
 #userbox {
   // height: 100px;
   // width: 100px;
-  border: 2px solid $clay;
+  border: 2px solid $redyz;
   border-radius: 5px;
   // vertical-align: middle;
   // padding-top: 50%;

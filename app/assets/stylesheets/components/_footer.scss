@@ -1,8 +1,8 @@
 .footer {
   padding:40px 0;
-  background-color:$strong-blue;
-  color:$lightest;
-  border-top: 1px $soft-blue solid;
+  background-color:$lightest;
+  color:$redy;
+  border-top: 1px $redyth solid;
   // position:sticky;
   // bottom: 0;
 }
@@ -43,7 +43,7 @@
   display:inline-block;
   text-align:center;
   border-radius:50%;
-  border:1px solid $lightest;
+  border:1px solid $redy;
   margin:0 8px;
   color:inherit;
   opacity:0.75;

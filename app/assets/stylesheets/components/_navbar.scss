@@ -10,18 +10,22 @@
   }
 }
 
+.navbar-nav {
+  height: 50px;
+}
+
 // .search {
 //   border: 1px $dark-green solid;
 // }
 
 .btn, .btn:hover {
   border-radius: 5px;
-}
-ul {
-  height: 38px;
-}
-li {
-  padding: 0 1em;
+  ul {
+    height: 38px;
+  }
+  li {
+    padding: 0 1em !important;
+  }
 }
 
 img {
@@ -30,6 +34,7 @@ img {
 
 #mag {
   height: 40px;
+  padding: 0 1em !important;
 }
 
 nav

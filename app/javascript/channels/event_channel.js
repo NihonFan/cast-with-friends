@@ -21,7 +21,7 @@ const initEventCable = async (eventId) => {
     token: document.getElementById('agora-temp-token').innerText
   };
 
-  window.remoteAudioTracks = [];
+  // window.remoteAudioTracks = [];
 
   console.log("hello")
 
@@ -29,24 +29,32 @@ const initEventCable = async (eventId) => {
     // Subscribe to a remote user.
     console.log("subscribe success");
 
+
+
     await client.subscribe(user, mediaType);
 
     // If the subscribed track is audio.
 
+    if (mediaType === 'audio') {
+      user.audioTrack.play();
+    }
+
       // Get `RemoteAudioTrack` in the `user` object.
-    window.remoteAudioTracks.push(user.audioTrack);
+    // window.remoteAudioTracks.push(user.audioTrack);
       // Play the audio track. No need to pass any DOM element.
 
   });
+
+  // client.on("user-joined", asnyc (user, medaType))
 
   // client.on("user-joined");
 
   await client.join(options.appId, options.channel, options.token, null);
   await client.publish(window.localAudioTrack);
 
-  window.remoteAudioTracks.forEach ((track) => {
-    track.play();
-  })
+  // window.remoteAudioTracks.forEach ((track) => {
+  //   track.play();
+  // })
 
   consumer.subscriptions.create({ channel: "EventChannel", id: eventId }, {
     received(data) {

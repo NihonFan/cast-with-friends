@@ -124,7 +124,7 @@
       <%# end %>
     <%# end %> -->
     <%#= link_to "", event_path(event) %>
-    <h1>Upcoming created events</h1>
+    <h1 class="dash">Upcoming created events</h1>
     <div class="flex-parent">
       <div class="input-flex-container">
         <% @user.events.each do |event| %>
@@ -171,7 +171,7 @@
       </div>
       <%#= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
       <div id="history">
-        <h1>Here you can relive your past events</h1>
+        <h1 class="dash">Here you can relive your past events</h1>
         <div>
           <% @user.events.each do |event| %>
             <% if event.date < DateTime.now %>

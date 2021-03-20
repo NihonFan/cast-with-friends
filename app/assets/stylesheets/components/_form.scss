@@ -1,11 +1,11 @@
 .form-login {
-  background: $redy;
+  background: $lightest;
   padding: 10px 20px;
   margin-top: 15vh;
   border-radius: 3px;
   box-shadow: 10px 10px 10px $redyth;
-  border: 2px white solid;
-  color: $lightest;
+  border: 2px $redy solid;
+  color: $redy;
 
   h2 {
     font-size: 25px;

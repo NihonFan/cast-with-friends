@@ -178,7 +178,9 @@ h1 {
   }
 }
 
-
+.dash {
+  color: $redy !important;
+}
 
 // @media (min-width: $parentMaxWidth / $parentWidthBase)
 //   .input::before {

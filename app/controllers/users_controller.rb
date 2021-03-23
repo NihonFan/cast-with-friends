@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(participations: { event: :episode }).find(params[:id])
     authorize @user
   end
 

@@ -50,9 +50,13 @@
 
 svg {
   height: inherit;
+  position: absolute;
+  z-index: -1;
 }
 
-
+.homimg {
+  width: 100%;
+}
 
 
 
@@ -65,13 +69,8 @@ svg {
 //   align-items: center;
 // }
 
-.prt {
-  height: 200vh;
-  width: 100vw;
-}
 
 .container {
-  position: absolute;
   background-color: #f2f2f2;
   height: fit-content;
   left: 20%;

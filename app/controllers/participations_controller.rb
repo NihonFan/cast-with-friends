@@ -11,7 +11,8 @@ class ParticipationsController < ApplicationController
     if @participation.save
       redirect_to user_path(@participation.user)
     else
-      render :new
+      flash[:notice] =  "You have already saved this event!"
+      redirect_to(events_path)
     end
 
   end

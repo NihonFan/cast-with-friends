@@ -10,13 +10,9 @@
       </div>
     </div>
     <hr>
-    <h2>The podcast you are to listening to 🎧</h2>
     <br>
-    <h5>
-      <strong>Event: <%= @event.title %></strong>
-    </h5>
-    <p><%= @event.description %></p>
-    <br>
+    <h2>Listening Event: <strong><%= @event.title %></strong></h2>
+    <h3>Description: <%= @event.description %></h3>
     <p>Podcast: <%= @event.episode.podcast.LN_title %></p>
     <p>Episode: <%= @event.episode.LN_title %></p>
 
@@ -37,6 +33,7 @@
     </div>
     <div style= "opacity: 0;" id="agora-temp-token"> <%= @temp_token %> </div>
     <h2 class="text-left">Participants</h2>
+    <hr>
     <div id="participant-list" class="d-flex justify-content-around row">
 
     </div>

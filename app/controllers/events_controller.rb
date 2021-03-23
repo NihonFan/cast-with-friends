@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @events = policy_scope(Event)
+    @events = policy_scope(Event).order(date: :asc)
   end
 
   def show
@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     @event.participant_list = @event.participant_list.push(current_user.id)
 
     @event.participant_list.uniq!
-    @event.save
+    @event.save!
 
     EventChannel.broadcast_to(
       @event,

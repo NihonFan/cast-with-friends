@@ -3,14 +3,14 @@
   <div class="row">
     <div class="sticky-note col-3">
     <h2 class="events">Events</h2>
-      <p>If you bookmark an event, you'll be receive notifications about the event</p>
-      <p>Add as many events as you want, and discuss with various people!</p>
+      <p>If you bookmark an event, you'll receive notifications about the event</p>
+      <p>Add as many events as you want and have discussions with various people!</p>
     </div>
     <div class="pocast-list col">
         <% @events.each do |event| %>
          <div class="card-product">
            <div class="card-product-infos">
-             <h2><%= button_to event.title, event_participations_path(event), class: "btn" %></h2>
+             <h2><%= button_to event.title, event_participations_path(event), data: { confirm: "Participate in this event? Clicking on this link will add the event to your dashboard" }, class: "btn" %></h2>
              <p><%= event.description %></p>
              <p><%= event.date %></p>
              <p>Participants:
@@ -24,3 +24,5 @@
      </div>
   </div>
  </div>
+
+ <%= flash[:notice]%>

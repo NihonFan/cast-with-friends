@@ -54,63 +54,75 @@ const initEventCable = async (eventId) => {
   //   track.play();
   // })
 
+  let fetch_status = () => {
+    fetch(`/api/v1/events/${eventId}`)
+    .then((response) => response.json())
+    .then((data) => {
+
+      document.getElementById('participant-list').innerHTML = "";
+
+
+      //let str = "";
+
+      data.participant_list_names.forEach((participant_name) => {
+        console.log("adding names");
+        //str += participant_name + " ";
+        document.getElementById('participant-list').insertAdjacentHTML('beforeend', `<div class="avatar-large"><h3>${participant_name}</h3></div>`);
+
+      })
+
+      //document.getElementById('participant-list').innerHTML = str;
+
+
+      if (data.state === "playing") {
+
+        window.localAudioTrack.setEnabled(false);
+
+
+        // window.remoteAudioTracks.forEach ((track) => {
+        //   track.stop();
+        // })
+
+        // leaveBasicCall();
+        if (window.audio_id) {
+          // window.howler_audio.pause();
+          window.howler_audio.seek(data.elapsed_seconds, window.audio_id);
+          window.howler_audio.play(window.audio_id);
+        } else {
+          window.audio_id = window.howler_audio.play();
+          window.howler_audio.seek(data.elapsed_seconds, window.audio_id);
+        }
+
+        // .then(() => {
+        // window.howler_audio.seek(data.elapsed_seconds).play(howler_audio._sounds._id);
+        // window.howler_audio.play();
+      } else if (data.state === "paused" || data.state === "unplayed") {
+
+        window.howler_audio.pause();
+
+        window.localAudioTrack.setEnabled(true);
+
+        // await client.publish(window.localAudioTrack);
+
+
+
+        // window.remoteAudioTracks.forEach ((track) => {
+        //   track.play();
+        // })
+
+
+        // startBasicCall();
+        // window.howler_audio.pause(howler_audio._sounds._id);
+      }
+    })
+  }
+
+  fetch_status();
+
   consumer.subscriptions.create({ channel: "EventChannel", id: eventId }, {
     received(data) {
-      fetch(`/api/v1/events/${eventId}`)
-      .then((response) => response.json())
-      .then((data) => {
 
-        let str = "";
-
-        data.participant_list_names.forEach((participant_name) => {
-          console.log("adding names");
-          str += participant_name + " ";
-        })
-
-        document.getElementById('participant-list').innerHTML = str;
-
-
-        if (data.state === "playing") {
-
-          window.localAudioTrack.setEnabled(false);
-
-
-          // window.remoteAudioTracks.forEach ((track) => {
-          //   track.stop();
-          // })
-
-          // leaveBasicCall();
-          if (window.audio_id) {
-            // window.howler_audio.pause();
-            window.howler_audio.seek(data.elapsed_seconds, window.audio_id);
-            window.howler_audio.play(window.audio_id);
-          } else {
-            window.audio_id = window.howler_audio.play();
-            window.howler_audio.seek(data.elapsed_seconds, window.audio_id);
-          }
-
-          // .then(() => {
-          // window.howler_audio.seek(data.elapsed_seconds).play(howler_audio._sounds._id);
-          // window.howler_audio.play();
-        } else if (data.state === "paused" || data.state === "unplayed") {
-
-          window.howler_audio.pause();
-
-          window.localAudioTrack.setEnabled(true);
-
-          // await client.publish(window.localAudioTrack);
-
-
-
-          // window.remoteAudioTracks.forEach ((track) => {
-          //   track.play();
-          // })
-
-
-          // startBasicCall();
-          // window.howler_audio.pause(howler_audio._sounds._id);
-        }
-      })
+    fetch_status();
 
 
       // const  = JSON.parse(apiCall);

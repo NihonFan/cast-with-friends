@@ -167,6 +167,7 @@ h1 {
   font-size: 22px;
   // margin-top: 100px;
   max-width: $parentMaxWidth;
+  padding-bottom: 15px;
 
   p {
     margin-top: 0;
@@ -328,11 +329,17 @@ h1 {
 //   align-items: center;
 // }
 
+.card-product {
+  min-height: 350px;
+}
+
 .card-product img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
+
+
 
 .greetings {
   text-transform: uppercase;

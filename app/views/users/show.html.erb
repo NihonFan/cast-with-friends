@@ -28,53 +28,38 @@
           </div>
         <% end %>
       </div>
-      <div class="description-flex-container">
+      <div class="description-flex-container mt-3">
         <% @user.events.each do |event| %>
           <p><a href="<%= event_path(event) %>"><%= event.description %> 🎧</a></p>
-    <!--     <%#= button_to event.title, event_path(event), method: :get, class: "btn" %>
-     --> <!--    <%#= link_to event.episode.podcast.LN_image_URL %> -->
+
         <% end %>
       </div>
     </div>
 
 
-    <!-- <h1>Upcoming bookmarked events:</h1> -->
-    <!-- <div class="flex-parent"> -->
-      <!-- <div class="input-flex-container"> -->
-        <%# @user.participations.each do |participation|  %>
-          <!-- <div class="input"> -->
-            <!-- <span data-year="<%#= participation.event.date %>" data-info="<%#= participation.event.title %>"></span> -->
-          <!-- </div> -->
-        <%# end %>
-      <!-- </div> -->
-      <!-- <div class="description-flex-container"> -->
-        <%# @user.participations.each do |participation|  %>
-          <!-- <p><a href="<%#= event_path(participation.event) %>"><%#= participation.event.description %> 🎧</a></p> -->
-      <%#= button_to event.title, event_path(event), method: :get, class: "btn" %>
-      <!--    <%#= link_to event.episode.podcast.LN_image_URL %> -->
-        <%# end %>
-      <!-- </div> -->
-      <div class="card-product">
-        <div class="card-product-infos">
+
+    <h1 class="dash">Events where I am Participating</h1>
+    <div class="card-product">
+      <div class="card-product-infos">
+
+        <div class="row col-xs-12">
           <% @user.participations.each do |participation|  %>
-            <ul>
-              <img src=<%=participation.event.episode.podcast.LN_image_URL %>>
-              <%= button_to participation.event.title, event_path(participation.event), method: :get, class: "btn" %>
-            </ul>
-          <% end %>
-        </div>
-      </div>
-      <%#= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
-      <div id="history">
-        <h1 class="dash">Here you can relive your past events</h1>
-        <div>
-          <% @user.events.each do |event| %>
-            <% if event.date < DateTime.now %>
-              <p><%= event.title %></p>
+          <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 mb-2">
+            <%= link_to event_path(participation.event), method: :get, target: "_top", class: "nav-link btn" do %>
+              <% @title = participation.event.title %>
+              <% @description = participation.event.description %>
+              <% @date = participation.event.date %>
+              <% @img = participation.event.episode.podcast.LN_image_URL %>
+              <%= render 'shared/eventcard' %>
             <% end %>
+          </div>
           <% end %>
+         </div>
         </div>
-      </div>
+     </div>
+
+      <%#= link_to "Create a new event!", podcasts_search_path, class: "nav-link btn" %>
+
     </div>
   </div>
 </div>

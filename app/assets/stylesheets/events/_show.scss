@@ -1,65 +1,151 @@
-// audio
-#audio-box {
-  background-color: $lightest;
-  box-shadow: 5px 5px 50px 2px $redyth;
-  border-radius: 25px;
-  color: $redy;
-  position: intial;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(0%, -50%);
-  padding: 2em 2em 1em 2em;
-  user-select: none;
-  cursor: none !important;
-}
+@use postcss-nested;
 
-// #progress {
-//   user-select: none;
-// }
+.player-container {
 
-#play {
-  // user-select: none;
-  display: block;
-}
-#time-wrapper {
-  text-align: center;
-  user-select: none;
-}
-#time-wrapper:after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-}
-/*Remove default styles*/
-input[type="range"] {
-  -webkit-appearance: none;
-  user-select: none;
-  margin: 18px 0;
-  width: 90%;
-  margin: 1em 2em;
-}
-/*Track & handle(thumb) styles*/
-/*Chrome*/
-input[type="range"]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 1em;
-  user-select: none;
-  background: $lightest;
-  border-radius: 0;
-  border: 1px solid $redy;
-  box-shadow: 3px 3px .4em $redy, -.3em 0 .4em $redy;
-}
-input[type="range"]::-webkit-slider-thumb {
-  border: 2px solid $redy;
-  box-shadow: 3px 3px .4em $redytw, -.3em 0 .4em $redy;
-  height: 2em;
-  width: 28px;
-  border-radius: 70px;
-  background: $redyth;
-  user-select: none;
-  -webkit-appearance: none;
-  margin-top: -0.5em;
+    user-select: none;
+    position: relative;
+    background: #c4c4c4;
+    width: 400px;
+    margin: 0 auto;
+
+    .infos {
+      position: relative;
+    }
+
+    .player {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .player-element {
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+
+            &.player-element-lp {
+
+                transform: perspective(2000px);
+                transition: 1s;
+                transform-style: preserve-3d;
+                backface-visibility: hidden;
+                padding: 40px;
+                width: 85%;
+                height: auto;
+                display: inline-block;
+                box-sizing: border-box;
+
+            }
+
+            &.player-element-tonearm {
+
+                position: absolute;
+                top: calc(calc(20px * 2) - 29%);
+                right: calc(calc(20px * 3) - 43%);
+                width: 90%;
+                height: auto;
+
+            }
+
+        }
+
+    }
+
+    .player-controls {
+
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 100%;
+        padding: calc(20px * 2);
+        box-sizing: border-box;
+        align-items: center;
+
+        .player-button {
+
+            position: relative;
+            margin: 0 calc(20px / 2);
+            padding:0 calc(20px / 2);
+            background-color: transparent;
+
+            svg {
+
+                max-height: 24px;
+                width: 100%;
+
+                path {
+                    fill: #5b5b5f;
+                    transition: .35s;
+                }
+            }
+
+            &:focus, &:hover {
+
+                outline: none;
+                cursor: pointer;
+
+                svg path {
+                    fill: #121212;
+                }
+
+            }
+
+            &:first-child {
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+                padding-right: 0;
+            }
+
+            &.player-button-play {
+
+                display: inline;
+
+                &.paused { display: none; }
+
+            }
+
+            &.player-button-pause {
+
+                display: none;
+
+                &.paused { display: inline; }
+
+            }
+
+        }
+
+    }
+
+    .player-playlist {
+
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        padding-bottom: calc(20px * 2);
+        width: calc(100% - calc(20px * 4));
+        box-sizing: border-box;
+        list-style-type: decimal-leading-zero;
+        padding-left: calc(20px * 1.5);
+
+        li {
+
+            padding: calc(20px / 5) 0;
+            cursor: pointer;
+
+            &.current-track {
+                font-weight: bold;
+            }
+
+        }
+
+    }
+
 }
 
 

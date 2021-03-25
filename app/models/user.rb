@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :events
   has_many :participations
   has_many :bookmarks, :dependent => :delete_all
+  has_many :episodes, through: :events
+  has_many :podcasts, through: :episodes
+
 
   has_one_attached :avatar do |attachable|
     attachable.variant :thumb, resize: "50x50"

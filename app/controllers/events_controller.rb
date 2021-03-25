@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @events = policy_scope(Event).order(date: :asc)
+    @events = policy_scope(Event).includes(:episode, episode: [:podcast]).order(date: :desc)
   end
 
   def show

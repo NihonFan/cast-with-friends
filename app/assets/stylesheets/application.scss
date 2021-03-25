@@ -15,6 +15,7 @@
 @import "components/link";
 @import "components/searchbar";
 @import "components/background";
+@import "components/card";
 
 // Your CSS partials
 @import "components/index";
@@ -28,6 +29,7 @@
 
 .container {
   min-height: 65vh;
+  margin-bottom: 2em;
 }
 // body{
 //   background: linear-gradient(-180deg, $soft-blue 15%, $light-blue, $strong-blue 80%);

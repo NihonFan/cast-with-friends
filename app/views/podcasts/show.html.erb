@@ -7,6 +7,10 @@
   <%# end %>
 </div> -->
 
+<% if flash[:notice] -%>
+  <div class = "alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
 <div class="container index">
   <div class="col-xs-auto">
     <h1>Episodes</h1>

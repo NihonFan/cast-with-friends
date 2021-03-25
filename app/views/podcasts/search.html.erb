@@ -1,5 +1,9 @@
 <div class="container">
+
   <h1 style="text-align:center">Search for a podcast title</h1>
+  <% if flash[:notice] -%>
+    <div class = "alert alert-success"><%= flash[:notice] %></div>
+  <% end %>
 
   <div class="box searchbar">
     <%= simple_form_for :title, url: podcasts_path, method: "GET", html: { class: 'form-inline' } do |f| %>

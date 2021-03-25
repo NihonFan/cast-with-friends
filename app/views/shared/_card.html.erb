@@ -1,6 +1,5 @@
 <div class="card-product">
-  <%#= game.photo.attached? ? (cl_image_tag game.photo.key) : false %>
-  <!-- <img src="<%#= @img %>" > -->
+  <%= image_tag @img rescue image_tag 'long_logo.png' %>
   <div class="card-product-infos text-left">
     <h2 class="truncated" style="text-overflow: ellipsis;"><%= @title %></h2>
     <p class="truncated" style="text-overflow: ellipsis;"><%= @description %></p>

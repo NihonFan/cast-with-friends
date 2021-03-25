@@ -21,6 +21,10 @@ class PodcastsController < ApplicationController
       @podcasts_list << podcast
     end
     @podcasts = @podcasts_list
+  rescue
+    flash[:notice] = "Cannot find your search content"
+    render :search
+
   end
 
   def show
@@ -34,13 +38,18 @@ class PodcastsController < ApplicationController
       episode_try = Episode.find_or_initialize_by(LN_episode_id: episode["id"])
       episode_try.podcast = @podcast
       episode_try.LN_title = episode["title"]
-      episode_try.LN_description = episode["description"]
+      episode_try.LN_description = Nokogiri::HTML(episode["description"]).text
       episode_try.LN_audio_URL = episode["audio"]
       episode_try.save
       # podcast = Podcast.create(LN_title: result["title_original"], LN_description: result["description_original"], LN_image_URL: result["image"], LN_podcast_id: result["id"])
       @episodes_list << episode_try
     end
     @episodes = @episodes_list
+  rescue
+    flash[:notice] = "Cannot find the episodes for that podcast"
+    render :search
+
+
   end
 
   def search

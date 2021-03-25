@@ -3,7 +3,13 @@ class EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @events = policy_scope(Event).includes(:episode, episode: [:podcast]).order(date: :desc)
+
+    if params["title"].present?
+      @events = policy_scope(Event).search_by_title_and_description(params["title"]["item"]).includes(:episode, episode: [:podcast]).order(date: :desc)
+    else
+      @events = policy_scope(Event).includes(:episode, episode: [:podcast]).order(date: :desc)
+    end
+
   end
 
   def show

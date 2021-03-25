@@ -25,6 +25,9 @@ gem 'redis'
 gem 'devise'
 gem 'pundit'
 
+gem 'pg_search', '~> 2.3.0'
+
+
 
 
 # Use Active Storage variant

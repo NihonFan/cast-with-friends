@@ -9,6 +9,13 @@ class Event < ApplicationRecord
   validates :description, presence: true
   validates :date, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_description,
+    against: [ :title, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 
   def elapsed_seconds
     if self.state != "unplayed"

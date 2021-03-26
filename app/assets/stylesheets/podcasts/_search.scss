@@ -2,6 +2,12 @@
   margin-left: 27em;
 }
 
+@media only screen and (max-width: 600px) {
+#title_podname {
+  margin-left: 0;
+}
+}
+
 .podsearch {
   position: inherit;
 }

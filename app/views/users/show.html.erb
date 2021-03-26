@@ -9,7 +9,7 @@
 
     <div class="float-wrap">
       <ul><%= button_to "New event", podcasts_search_path, method: :get, class: "btn" %></ul>
-      <ul><%= button_to "History", user_path(current_user, anchor: "history"), method: :get, class: "btn" %></ul>
+      <ul id="history"<%= button_to "History", user_path(current_user, anchor: "history"), method: :get, class: "btn" %></ul>
     </div>
     <br>
    <!--  <h1>In less than 15 minutes</h1>

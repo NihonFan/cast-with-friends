@@ -13,7 +13,7 @@
       padding: 0 15px;
   }
 
-  .fa{
+  .fa {
   box-sizing: border-box;
   padding: 0 0 0 10px;
   width: 30px;
@@ -27,6 +27,14 @@
   font-size: 1.2em;
   // transition: all 1s;
   }
+
+@media only screen and (max-width: 600px) {
+  .fa {
+    display: none;
+  }
+}
+
+
 #magni {
   position: relative;
   top: 50%;

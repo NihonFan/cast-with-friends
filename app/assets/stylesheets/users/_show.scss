@@ -13,6 +13,12 @@ $inactive: redyth;
   @return $random_range;
 }
 
+@media only screen and (max-width: 600px) {
+  #history {
+    display: none;
+  }
+}
+
 .snow {
   $total: 100;
   position: absolute;

@@ -1,18 +1,26 @@
-<div class="container-new">
-  <div class="justify-content-center">
-    <h1>Create <strong>your event</strong> and invite your friends!</h1>
-      <div class="podcast-name">
-        <p>⭐️Podcast: <%= @episode.podcast.LN_title %></p>
-        <p>⭐️Episode: <%= @episode.LN_title %></p>
+<div class="container">
+  <div class="row">
+    <div class="col col-12 text-center">
+      <h2 style="padding: 20px 0;">Create <strong>your event</strong> and invite your friends!</h2>
+    </div>
+
+
+    <div class="col col-12">
+      <p><strong>⭐️Podcast:</strong> <%= @episode.podcast.LN_title %></p>
+      <p><strong>⭐️Episode:</strong> <%= @episode.LN_title %></p>
+
+    </div>
+    <div class="col col-12">
+      <div class="form-wrapper">
+         <%= simple_form_for [ @episode, @event ] do |f| %>
+           <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
+           <%= f.input :title, class: "form-control" %>
+           <%= f.input :description, class: "form-control" %>
+           <%= f.button :submit, "Create", class: "btn-a" %>
+         <% end %>
       </div>
-     <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-        <%= simple_form_for [ @episode, @event ] do |f| %>
-          <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
-          <%= f.input :title, class: "form-control" %>
-          <%= f.input :description, class: "form-control" %>
-          <%= f.button :submit, "Create", class: "btn-a" %>
-        <% end %>
-     </div>
+    </div>
+
   </div>
 </div>
 

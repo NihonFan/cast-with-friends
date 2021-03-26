@@ -22,6 +22,7 @@
     <h1 class="dash">Upcoming created events</h1>
     <div class="flex-parent">
       <div class="mainti-flex-container">
+        <%# @user.events.order(date: :desc) %>
         <% @user.events.each do |event| %>
           <div class="mainti">
             <% d = event.date %>

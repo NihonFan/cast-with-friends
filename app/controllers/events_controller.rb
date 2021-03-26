@@ -2,6 +2,8 @@ class EventsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
+
+
   def index
 
     if params["title"].present?
@@ -45,6 +47,7 @@ class EventsController < ApplicationController
       "user"
     )
 
+    # @event = @event.order(date: :desc)
   end
 
   def new

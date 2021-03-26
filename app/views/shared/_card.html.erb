@@ -1,11 +1,11 @@
 <div class="card-product">
-  <%#= game.photo.attached? ? (cl_image_tag game.photo.key) : false %>
-  <!-- <img src="<%#= @img %>" > -->
-  <div class="row col-12">
-    <div class="card-product-infos text-left">
-      <h2 class="truncated col-8" style="text-overflow: ellipsis;"><%= @title %></h2>
-      <p class="truncated col-8" style="text-overflow: ellipsis;"><%= @description %></p>
-      <!-- <p class="truncated" style="text-overflow: ellipsis;">Game Owner: <%#= @card_owner %></p> -->
+
+  <div class="row col-12 cardrow">
+    <%= image_tag @img rescue image_tag 'long_logo.png' %>
+
+    <div class="card-product-infos text-left col-10">
+      <h2 class="truncated" style="text-overflow: ellipsis;"><%= @title %></h2>
+      <p class="truncated" style="text-overflow: ellipsis;"><%= @description %></p>
     </div>
   </div>
 </div>

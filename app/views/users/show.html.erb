@@ -9,7 +9,7 @@
 
     <div class="float-wrap">
       <ul><%= button_to "New event", podcasts_search_path, method: :get, class: "btn" %></ul>
-      <ul id="history"<%= button_to "History", user_path(current_user, anchor: "history"), method: :get, class: "btn" %></ul>
+      <!-- <ul id="history"<%#= button_to "History", user_path(current_user, anchor: "history"), method: :get, class: "btn" %></ul> -->
     </div>
     <br>
    <!--  <h1>In less than 15 minutes</h1>
@@ -24,14 +24,15 @@
       <div class="mainti-flex-container">
         <% @user.events.each do |event| %>
           <div class="mainti">
-            <span data-year="<%= event.date %>" data-info="<%= event.title %>"></span>
+            <% d = event.date %>
+            <% d = d.strftime("%a, %b %e %Y at %R") %>
+            <span data-year="<%= d %>" data-info="<%= event.title %>"></span>
           </div>
         <% end %>
       </div>
       <div class="description-flex-container mt-3">
         <% @user.events.each do |event| %>
           <p><a href="<%= event_path(event) %>"><%= event.description %> 🎧</a></p>
-
         <% end %>
       </div>
     </div>

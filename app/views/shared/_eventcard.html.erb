@@ -4,8 +4,8 @@
     <%= image_tag @img rescue image_tag 'long_logo.png' %>
 
     <div class="card-product-infos text-left col-8">
-      <h2 class="truncated" style="text-overflow: ellipsis;"><%= @title %></h2>
-      <p class="truncated" style="text-overflow: ellipsis;"><%= @description %></p>
+      <h2><%= @title %></h2>
+      <p><%= @description %></p>
       <p><%= @date %></p>
     </div>
   </div>

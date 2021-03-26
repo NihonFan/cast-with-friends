@@ -11,12 +11,14 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+  margin-left: 2%;
 }
 
 .card-product h2 {
   font-size: 22px;
   font-weight: bold;
   margin: 0;
+  color: $lightest;
 }
 
 .card-product p {
@@ -25,18 +27,13 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: $lightest;
 }
 
 .card-product-infos {
     padding: 16px;
     overflow: hidden;
     width:100%;
-    .truncated {
-      // flex: 1;
-      width: 90%;
-      white-space: nowrap;
-      overflow: hidden;
-    }
   }
 
 .cardrow {

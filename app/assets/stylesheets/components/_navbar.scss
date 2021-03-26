@@ -42,8 +42,7 @@
   }
 }
 
-nav
-{
+nav {
     position: intial;
     top: 50%;
     right: 0;
@@ -52,7 +51,7 @@ nav
     display: table;
     margin: 0 auto;
     transform: translateY(-50%);
-    padding-top: 2em;
+    padding-top: 3em;
 }
 
 nav a

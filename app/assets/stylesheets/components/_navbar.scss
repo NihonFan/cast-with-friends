@@ -34,6 +34,12 @@
   padding: 0 1em !important;
 }
 
+@media only screen and (max-width: 600px) {
+  #mag {
+    display: none;
+  }
+}
+
 nav
 {
     position: intial;

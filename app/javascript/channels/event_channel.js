@@ -67,7 +67,7 @@ const initEventCable = async (eventId) => {
       data.participant_list_names.forEach((participant_name) => {
         console.log("adding names");
         //str += participant_name + " ";
-        document.getElementById('participant-list').insertAdjacentHTML('beforeend', `<div class="avatar-large"><h3>${participant_name}</h3></div>`);
+        document.getElementById('participant-list').insertAdjacentHTML('beforeend', `<div class="avatar-large" style="text-align: center;"><h3>${participant_name}</h3></div>`);
 
       })
 

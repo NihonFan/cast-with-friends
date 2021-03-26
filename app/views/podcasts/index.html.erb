@@ -1,7 +1,7 @@
 <div class="container index">
-  <div class="col-xs-auto">
-    <h1>Events</h1>
-    <div class="row col-xs-12">
+  <div class="col-xs-auto row">
+    <h1>Podcasts</h1>
+    <div class="row col-sm-12">
       <% @podcasts.each do |podcast| %>
       <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4">
         <%= link_to podcast_path(podcast), class: "nav-link btn" do %>

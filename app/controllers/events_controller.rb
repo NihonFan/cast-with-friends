@@ -9,7 +9,7 @@ class EventsController < ApplicationController
     if params["title"].present?
       @events = policy_scope(Event).search_by_title_and_description(params["title"]["item"]).includes(:episode, episode: [:podcast]).order(date: :desc)
     else
-      @events = policy_scope(Event).includes(:episode, episode: [:podcast]).where("date > ?", Time.now).order(date: :desc)
+      @events = policy_scope(Event).includes(:episode, episode: [:podcast]).where("date > ?", Time.now).order(date: :asc)
     end
 
   end

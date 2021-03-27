@@ -16,7 +16,9 @@
         <%= link_to event_participations_path(event), method: :post, data: { confirm: "Participate in this event? Clicking on this link will add the event to your dashboard" }, target: "_top", class: "nav-link btn" do %>
           <% @title = event.title %>
           <% @description = event.description %>
-          <% @date = event.date %>
+          <% d = event.date %>
+          <% d = d.strftime("%a, %b %e %Y at %R") %>
+          <% @date = d %>
           <% @img = event.episode.podcast.LN_image_URL %>
           <%= render 'shared/eventcard' %>
         <% end %>

@@ -98,7 +98,9 @@
     <p>Podcast: <%= @event.episode.podcast.LN_title %></p>
     <p>Episode: <%= @event.episode.LN_title %></p> -->
 
-
+    <div class="des">
+      <h6 class="text-center">Press the play button to get started, and press the pause button to discuss with everyone else~</h6>
+    </div>
     <div id="event" class="container-show" data-event-id="<%= @event.id %>">
       <a id="audio-file"> <%= @event.episode.LN_audio_URL %>  </a>
       <div class="row">
@@ -114,8 +116,8 @@
       <a id="audio-file" class="audioURL"><%= @event.episode.LN_audio_URL %></a>
     </div>
     <div style= "opacity: 0;" id="agora-temp-token"> <%= @temp_token %> </div>
-    <h2 class="text-left">Participants</h2>
     <hr>
+    <h2 class="text-left">Participants</h2>
     <div id="participant-list" class="d-flex justify-content-around row">
 
     </div>

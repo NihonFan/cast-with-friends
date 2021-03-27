@@ -25,15 +25,17 @@
         <%# @user.events.order(date: :desc) %>
         <% @user.events.each do |event| %>
           <div class="mainti">
-            <% d = event.date %>
-            <% d = d.strftime("%a, %b %e %Y at %R") %>
-            <span data-year="<%= d %>" data-info="<%= event.title %>"></span>
+            <%# d = event.date %>
+            <%# d = d.strftime("%a, %b %e %Y at %R") %>
+            <span data-info="<%= event.title %>"></span>
           </div>
         <% end %>
       </div>
       <div class="description-flex-container mt-3">
         <% @user.events.each do |event| %>
-          <p><a href="<%= event_path(event) %>"><%= event.description %> 🎧</a></p>
+        <% d = event.date %>
+        <% d = d.strftime("%a, %b %e %Y at %R") %>
+          <p><a href="<%= event_path(event) %>"><%= event.description %> 🎧 <%= d %></a></p>
         <% end %>
       </div>
     </div>

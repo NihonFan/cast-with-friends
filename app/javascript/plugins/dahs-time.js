@@ -1,7 +1,7 @@
 $(function(){
   var inputs = $('.mainti');
   var paras = $('.description-flex-container').find('p');
-  inputs.click(function(){
+  inputs.mouseover(function(){
     var t = $(this),
         ind = t.index(),
         matchedPara = paras.eq(ind);

@@ -50,7 +50,9 @@
             <%= link_to event_path(participation.event), method: :get, target: "_top", class: "nav-link btn" do %>
               <% @title = participation.event.title %>
               <% @description = participation.event.description %>
-              <% @date = participation.event.date %>
+              <% d = participation.event.date %>
+              <% d = d.strftime("%a, %b %e %Y at %R") %>
+              <% @date = d %>
               <% @img = participation.event.episode.podcast.LN_image_URL %>
               <%= render 'shared/eventcard' %>
             <% end %>

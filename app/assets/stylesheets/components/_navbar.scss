@@ -3,6 +3,12 @@
   border-radius: 50%;
 }
 
+@media only screen and (max-width: 600px) {
+  #ava {
+    display: none;
+  }
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: $lightest;

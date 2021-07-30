@@ -22,8 +22,11 @@
             <%= button_to "Log out", destroy_user_session_path, :method => :delete, class: "btn" %>
           </li>
         <% else %>
-          <li class="nav-item active" style="margin: 8px">
+          <li class="nav-item active" style="margin: 8px; display: inline-block;">
             <%= button_to "Log in", new_user_session_path, class: "btn" %>
+          </li>
+          <li class="nav-item active" style="margin: 8px; display: inline-block">
+            <%= button_to "Sign up", new_user_registration_path, method: :get, class: "btn" %>
           </li>
         <% end %>
 
